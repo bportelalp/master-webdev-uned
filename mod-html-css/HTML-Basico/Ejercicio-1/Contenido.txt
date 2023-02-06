@@ -1,0 +1,8 @@
+XML
+XML son las siglas de Extensible Markup Language, que es un lenguaje de marcado que define un conjunto de reglas para la codificación de documento El lenguaje XML se emplea para múltiples servicios webs. Puede editarse con cualquier navegador y existen distintos formatos estándares sujetos a este formato. Su máxima utilización está en el uso de API de comunicación entre dos aplicaciones que intercambian mensajes entre sí.
+
+XML se compone de etiquetas que se escriben entre los símbolos menor que y mayor que.
+
+Historia de XML
+
+Los inicios del lenguaje XML Los inicios del lenguaje XML se lleva a cabo con una declaración de documento XML fue creado por el Word Wide Consortium para permitir la interoperabilidad entre máquinas M2M o B2B que indica como se organiza el documento. se remontan con lal año 1990, cuando Tim Berners-Lee creó la primera página web. Formato RDF W3C definió RDF como uno de formatos XML para uso extendido. 
