@@ -1,0 +1,28 @@
+body {
+    font-family: 'Quicksand', Georgia, 'Times New Roman';
+}
+
+.flex {
+    display: flex;
+}
+
+.m-x {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.bordered-table{
+    width: 100%;
+}
+
+.bordered-table, .bordered-table th, .bordered-table  td {
+    border: 2px solid blue;
+}
+
+.bordered-table-collapsed {
+    border-collapse: collapse;
+}
+
+.table-height tr {
+    height: 50px;
+}

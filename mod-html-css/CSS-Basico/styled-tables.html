@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>CSS Básico</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styled-tables.styles.css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <head>
+        <h1>
+            Estilo de tablas
+        </h1>
+    </head>
+    <article>
+        <h1>Personalización de bordes y dimensiones</h1>
+        <p>
+            Se tratan como si fueran otro elemento HTML cualquiera con la propiedad <i>border</i> y sus derivadas. El
+            borde para que tenga efecto se debe aplicar en <i>table</i>, <i>th</i> y <i>td</i> para que se visualice por
+            todo.
+        </p>
+        <p>
+            Pero con esto se añade un borde doble, porque el borde se añade en cada elemento, hay que colapsarlos
+        </p>
+        <p>
+            La tabla se ajusta al contenido, pero se puede expandir con la propiedad width
+        </p>
+        <P>
+            El alto de una fila se puede aplicar con height al elemento th o td. Se propaga al resto, ajustando todas
+            las celdas al más exigente
+        </P>
+        <div class="flex">
+            <table class="m-x bordered-table">
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                </tr>
+                <tr>
+                    <td style="height: 50px;">Peter</td>
+                    <td style="height: 60px;">Griffin</td>
+                </tr>
+                <tr>
+                    <td>Lois</td>
+                    <td>Griffin</td>
+                </tr>
+            </table>
+            <table class="bordered-table bordered-table-collapsed">
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                </tr>
+                <tr>
+                    <td>Peter</td>
+                    <td>Griffin</td>
+                </tr>
+                <tr>
+                    <td>Lois</td>
+                    <td>Griffin</td>
+                </tr>
+            </table>
+        </div>
+    </article>
+    <article>
+        <h1>Alineación de contenido</h1>
+        <p>
+            En la tabla el contenido se alinea usando la propiedad <b>text-align</b> en horizontal y
+            <b>vertical-align</b> en vertical. Se suele aplicar a los propios elementos <i>th</i> y/o <i>td</i>
+        </p>
+        <section>
+            <table class="bordered-table bordered-table-collapsed table-height">
+                <tr>
+                    <th style="text-align: start;">Firstname</th>
+                    <th>Lastname</th>
+                </tr>
+                <tr>
+                    <td>Peter</td>
+                    <td style="vertical-align: bottom; text-align: end;">Griffin</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; vertical-align: top;">Lois</td>
+                    <td>Griffin</td>
+                </tr>
+            </table>
+        </section>
+    </article>
+</body>
+
+</html>
