@@ -54,3 +54,29 @@ img[alt='alter'] {
     padding: 10px;
     border: 3px solid red;
 }
+
+p.modified-line::first-line {
+    color: darkblue;
+}
+
+p.modified-line::first-letter {
+    font-size: xx-large;
+    color: rebeccapurple;
+}
+
+.before-after {
+    border: 2px solid blue;
+}
+.before-pseudo::before{
+    content: 'Parte Before';
+    border: 1px solid red;
+}
+.after-pseudo::after{
+    content: 'Parte after';
+    border: 1px solid red;
+}
+
+.selection-red::selection {
+    background: red;
+    color: white;
+}
