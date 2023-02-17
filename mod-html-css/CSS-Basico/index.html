@@ -1,0 +1,46 @@
+<!DOCTYPE html xml:lang='es-ES'>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>CSS Básico</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+
+<body>
+    <article>
+
+        <head>
+            <h1>
+                Selectores de CSS.
+            </h1>
+        </head>
+        <section>
+            <h1>
+                Selectores de css de atributos.
+            </h1>
+            <p>
+                Permiten seleccionar elementos HTML en función de sus atributos y/o valores de dichos atributos. En el
+                siguiente ejemplo se toma la imagen y se aplican estilos en función de los atributos que contiene
+            </p>
+            <div style="display: flex">
+                <figure>
+                    <img src="./../HTML-Basico/Ejercicio-1/xml.png" alt="Text" />
+                    <figcaption>Esta figura tiene alt, asi que se le aplica un borde de color verde a su contenido</caption>
+                </figure>
+                <figure>
+                    <img src="./../HTML-Basico/Ejercicio-1/xml.png" />
+                    <figcaption>Esta figura no tiene alt, asi que no se le aplica un borde a su contenido</caption>
+                </figure>
+                <figure>
+                    <img src="./../HTML-Basico/Ejercicio-1/xml.png" alt="alter" />
+                    <figcaption>Esta figura tiene alt, y además tiene el valor "alter" así que se aplica el selector de color rojo</caption>
+                </figure>
+        </section>
+    </article>
+
+</body>
+
+</html>
