@@ -1,6 +1,5 @@
-.container-img {
-    display: inline;
-    max-width: 20%;
+body {
+    font-family: 'Quicksand', Georgia, 'Times New Roman';
 }
 
 img {
@@ -13,4 +12,45 @@ img[alt] {
 
 img[alt='alter'] {
     border: 2px solid red;
+}
+
+.boxes-first-last>span {
+    height: 2rem;
+    width: 2rem;
+    background-color: blue;
+    display: inline-block;
+}
+
+.boxes-first-last>span:first-child {
+    background-color: green;
+}
+
+.boxes-first-last>span:last-child {
+    background-color: red;
+}
+
+.boxes-n>span {
+    height: 2rem;
+    width: 2rem;
+    background-color: blue;
+    display: inline-block;
+}
+
+.boxes-n>span:nth-child(2n + 3) {
+    background-color: green;
+}
+
+.span-empty {
+    margin: 0px 5px;
+    padding: 10px;
+    border: 3px solid red;
+}
+
+.span-empty:empty {
+    padding: 2px;
+}
+.span-empty-without {
+    /*Para demostrar como queda sin el empty*/
+    padding: 10px;
+    border: 3px solid red;
 }

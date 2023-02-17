@@ -7,6 +7,8 @@
     <title>CSS Básico</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -17,6 +19,7 @@
                 Selectores de CSS.
             </h1>
         </head>
+        <!--Selectores atributos-->
         <section>
             <h1>
                 Selectores de css de atributos.
@@ -28,7 +31,8 @@
             <div style="display: flex">
                 <figure>
                     <img src="./../HTML-Basico/Ejercicio-1/xml.png" alt="Text" />
-                    <figcaption>Esta figura tiene alt, asi que se le aplica un borde de color verde a su contenido</caption>
+                    <figcaption>Esta figura tiene alt, asi que se le aplica un borde de color verde a su contenido
+                        </caption>
                 </figure>
                 <figure>
                     <img src="./../HTML-Basico/Ejercicio-1/xml.png" />
@@ -36,11 +40,93 @@
                 </figure>
                 <figure>
                     <img src="./../HTML-Basico/Ejercicio-1/xml.png" alt="alter" />
-                    <figcaption>Esta figura tiene alt, y además tiene el valor "alter" así que se aplica el selector de color rojo</caption>
+                    <figcaption>Esta figura tiene alt, y además tiene el valor "alter" así que se aplica el selector de
+                        color rojo</caption>
                 </figure>
         </section>
-    </article>
 
+        <!--Pseudoclases de child-->
+        <section>
+            <h1>
+                Pseudo clases en listas.
+            </h1>
+            <p>
+                Ejemplos de las pseudoclases :first-child, :last-child y :nth-child
+            </p>
+            <div>
+                <section id="first-last">
+                    <h4>
+                        First-child y last child.
+                    </h4>
+                    <p>
+                        Se marca el primer elemento con el selector :first-child y se aplica un estilo de color verde y
+                        al
+                        :last-child un color rojo
+                    </p>
+                    <div class="boxes-first-last">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </section>
+                <section>
+                    <h4>
+                        Hijo n
+                    </h4>
+                    <p>
+                        Se marcan en verde con el selector :nth-child(2n + 3). Esto implica que n va tomando valores así
+                        que para 0, 1, 2, 3.. los elementos que aplican el selector son los 3, 5, 7...
+                    </p>
+                    <div class="boxes-n">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p>
+                        Con :nth-last-child(n) se empieza desde el final
+                    </p>
+                </section>
+            </div>
+        </section>
+
+        <!--Pseudoclase empty-->
+        <section>
+            <h1>
+                Pseudoclase :empty
+            </h1>
+            <p>
+                Se aplica cuando dinamicamente se tiene previsto dejar un elemento sin innerHTML para aplicar
+                propiedades especificas. En el ejemplo se aplica un padding solo cuando el elemento tiene contenido
+            </p>
+            <div style="display: flex;">
+                <div class="span-empty">Aqui hay contenido</div>
+                <div class="span-empty"></div>
+                <div class="span-empty-without"></div>
+            </div>
+            <p>
+                El cuadro del medio está afectado por la pseudoclase :empty por eso aplica un padding de 2px solo,
+                porque no tiene contenido. En cambio el siguiente es una demostracion de como quedaría si no tuviera
+                esta pseudoclase. Se mantiene el padding original
+            </p>
+        </section>
+        <section>
+            dw
+        </section>
+    </article>
 </body>
 
 </html>
