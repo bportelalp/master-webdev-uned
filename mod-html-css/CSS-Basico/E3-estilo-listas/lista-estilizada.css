@@ -1,0 +1,37 @@
+body {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.colored-list {
+    list-style-type: none;
+}
+
+.colored-list>li {
+    /*Se dice en el ejercicio ancho de 16px, pero eso no permite que quede como en la imagen. Por eso se pone padding de 1em,
+    esto es, 16px (porque el tamaño de fuente es 16px, así que la altura queda 32px)*/
+    padding: 1em;
+}
+
+/*li en posiciones impares, color de texto blanco*/
+.colored-list>li:nth-child(odd){
+    color: white;
+    font-weight: bold; /*Aparentemente los items de los li impares están en negrita pero no los otros*/
+}
+
+/*Selecciona los li empezando por el nº3, cada 2 elementos a la inversa, esto es, el 3 y el 1*/
+.colored-list>li:nth-child(-2n + 3) {
+    background-color: deepskyblue;
+}
+
+/*Selecciona los li empezando por el nº3, cada 2 elementos a la inversa, y empezando por el final, esto es, afecta al 7 y 9*/
+.colored-list>li:nth-last-child(-2n + 3) {
+    background-color: orange;
+}
+
+/*Selecciona sólo el quinto li*/
+.colored-list>li:nth-child(5) {
+    background-color: hotpink;
+}
+
