@@ -6,6 +6,9 @@ body {
 
 .colored-list {
     list-style-type: none;
+    /*Quita el padding/margin por defecto de las listas*/
+    padding: 0;
+    margin: 0;
 }
 
 .colored-list>li {
