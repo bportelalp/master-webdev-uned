@@ -7,20 +7,23 @@ function requireOperator(indexOperator = 1) {
 }
 
 function writeResult(value) {
-    const divResult = document.getElementById("divResult");
-    divResult.style.display = 'block';
     const span = document.getElementById("spanResult");
-    span.innerHTML = value;
+    if (value !== undefined)
+        span.innerHTML = value;
+    else
+        span.innerHTML = 'No se introdujeron números válidos'
 }
 
 function question() {
     const operator1 = requireOperator(1);
     const operator2 = requireOperator(2);
-    const result = operator1 + operator2;
+    let result;
+    if (typeof (operator1) !== 'number' || typeof (operator2) !== 'number')
+        result = operator1 + operator2;
+
     writeResult(result);
 }
 
 window.onload = () => {
     setTimeout(() => question(), 500);
-
 }
