@@ -1,0 +1,28 @@
+body {
+    font-family: 'Quicksand', Georgia, 'Times New Roman';
+}
+
+.container {
+    border: 2px solid green;
+    margin-top: 0.25em;
+}
+
+.fixed-width {
+    width: 500px;
+}
+
+.fixed-width-tight {
+    width: 100px;
+}
+
+.fixed-height-tight {
+    height: 80px;
+}
+
+.margin-auto {
+    margin: auto;
+}
+
+.overflow {
+    overflow-x: auto;
+}

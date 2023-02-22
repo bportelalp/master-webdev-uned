@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Posicionamiento</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='positioning.styles.css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Posicionamiento de elementos HTML</h1>
+    </header>
+    <section>
+        <h1>Width, max-width y margin:auto para elementos en bloqueS</h1>
+        <p>
+            Los elementos bloadipisicingck ocupan todo el ancho disponible, pero esto puede provocar que se salga del
+            espacio de su
+            contenedor si este es pequeño.
+        </p>
+        <div class="container">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit
+        </div>
+        <div class="container">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat corrupti a aperiam delectus vitae?
+            Nesciunt, similique maxime blanditiis quas laborum alias provident amet odit dolores dolorum necessitatibus
+            debitis, asperiores quisquam!
+        </div>
+        <p>
+            Se puede fijar el ancho con width y entonces no se extiende hasta el fondo del viewport. Sin embargo, hace
+            imposible centrarlo.
+        </p>
+        <div class="container fixed-width">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit
+        </div>
+        <p>
+            Para conseguir un efecto centrado, aplicar <code>margin: auto;</code>
+        </p>
+        <div class="container fixed-width margin-auto">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit
+        </div>
+        <p>
+            Es preferible usar <code>max-width</code> para facilitar el uso en ventanas de varios tipos
+        </p>
+    </section>
+    <section>
+        <h1>
+            Overflow
+        </h1>
+        <p>
+            Para controlar el overflow existe la propiedad <code>overflow</code> de CSS. Si tenemos un elemento block
+            que ocupa mucho su texto, este se saldrá del bloque, en especial cuando tiene fijado el ancho o el alto
+        </p>
+        <div class="container fixed-width-tight fixed-height-tight">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit
+        </div>
+        <p>
+            Este texto se pisa con el overflow del anterior. Por eso se usa esa propiedad que admite overflow en x y/o y
+            con <code>overflow-x, overflow-y, overflow</code> y se controla con scroll (oculto con barras
+            desplazamiento), hidden (oculto) o auto (solo con barras si es necesario)
+        </p>
+        <div class="container fixed-width-tight fixed-height-tight overflow">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit
+        </div>
+    </section>
+
+</body>
+
+</html>
