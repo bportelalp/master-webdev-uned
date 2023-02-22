@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+.list-exercise-section__title {
+    font-size: x-large;
+}
+
 .list-exercise-section>li:nth-child(odd) {
     padding: 0.75em;
     background-color: blanchedalmond;
