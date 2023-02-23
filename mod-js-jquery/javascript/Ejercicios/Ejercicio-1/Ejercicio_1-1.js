@@ -17,8 +17,8 @@ function writeResult(value) {
 function question() {
     const operator1 = requireOperator(1);
     const operator2 = requireOperator(2);
-    let result;
-    if (typeof (operator1) !== 'number' || typeof (operator2) !== 'number')
+    let result = undefined;
+    if (isFinite(operator1) && isFinite(operator2))
         result = operator1 + operator2;
 
     writeResult(result);
