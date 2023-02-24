@@ -2,14 +2,14 @@
 function requireOperator(indexOperator = 1) {
     const text = `Introduce el sumando ${indexOperator}:`
     let value = prompt(text);
-    value = parseInt(value);
+    value = parseFloat(value.replace(',','.'));
     return value;
 }
 
 function writeResult(value) {
     const span = document.getElementById("spanResult");
     if (value !== undefined)
-        span.innerHTML = value;
+        span.innerHTML = parseFloat(value.toFixed(2));
     else
         span.innerHTML = 'No se introdujeron números válidos'
 }
