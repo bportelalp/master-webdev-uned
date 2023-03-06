@@ -1,0 +1,55 @@
+/*Comportamiento como caja con borde para todos los elementos.
+En especial para los li, porque asi permite que con width: 25% quepan en
+cada fila exactamente 4 cajas, independientemente de si se añade borde*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px; /*Letra mas grande que por defecto*/
+}
+
+/*Todos los hijos directos del elemento*/
+.body-container>* {
+    background-color: #659494;
+    margin: 0.5em;
+    padding: 0.75em;
+    color: white;
+    text-align: center;
+}
+
+/*Estilo de la lista de items*/
+.list-product {
+    /*Quitar estilos por defecto de ul*/
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    /*Hacer que los hijos se muestren en línea, con flexbox y que se rompe la fila si no caben más (wrap)*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/*Cada li, exactamente 25% de ancho, para que quepan 4 por fila*/
+.list-product>li {
+    width: 25%;
+}
+
+/*Si se hace muy pequeño el viewport, en lugar de 4 por fila, 2 por fila
+para que se vea mejor el contenido*/
+@media(max-width: 600px){
+    .list-product>li {
+        width: 50%;
+    }
+}
+
+/*Contenido de dentro del item de la lista*/
+.list-product>li>div {
+    border: 2px solid white;
+    margin: 0.25em;
+    padding: 1em;
+    /*Cuando se hace muy pequeño el viewport, esconde el texto que sobresale*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
