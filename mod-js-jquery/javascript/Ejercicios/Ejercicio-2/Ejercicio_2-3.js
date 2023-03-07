@@ -25,11 +25,14 @@ function getField(msg, msgInvalid, msgOk, patternRegex) {
     return result;
 }
 
-
-let id = getField(msgId, msgIdInvalid, msgIdOk, /\d{8}\D/);
+const regexId = /\d{8}\D/;
 /*Fecha: (0 a 29)OR(30 a 31) / (1 a 9)OR(10 a 12) / (Cualquier numero de 4 digitos) */
-let date = getField(msgDate, msgDateInvalid, msgDateOk, /(([0-2][0-9])|(3[0-1]))\/((0[1-9])|(1[0-2]))\/[0-9]{4}/);
-let email = getField(msgEmail, msgEmailInvalid, msgEmailOk, /\D{1,}[@]\D{1,}.\D{1,}/);
+const regexDate = /(([0-2][0-9])|(3[0-1]))\/((0[1-9])|(1[0-2]))\/[0-9]{4}/;
+const regexEmail = /\D{1,}[@]\D{1,}.\D{1,}/;
+
+const id = getField(msgId, msgIdInvalid, msgIdOk, regexId);
+const date = getField(msgDate, msgDateInvalid, msgDateOk, regexDate);
+const email = getField(msgEmail, msgEmailInvalid, msgEmailOk, regexEmail);
 
 document.getElementById('id').innerHTML = id;
 document.getElementById('date').innerHTML = date;
