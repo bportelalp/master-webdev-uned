@@ -6,9 +6,9 @@ const ageBetween18and64 = 'Tienes {0} años, eres mayor de edad';
 const ageMoreThan65 = 'Disfruta de tu jubilación';
 
 function getAge() {
-    let result = '';
+    let result = undefined;
     let msg = msgInitial;
-    while (result === '') {
+    while (result === undefined) {
         const input = prompt(msg);
         const value = parseInt(input);
         if (isNaN(value) || value > 100 || value < 0) {
