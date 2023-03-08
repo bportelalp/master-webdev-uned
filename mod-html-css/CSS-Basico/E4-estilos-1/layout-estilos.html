@@ -16,7 +16,10 @@
         &lt;nav&gt;
     </nav>
     <article>
-        <!--Se añade un div dentro de cada li para poder añadir margin a este ultimo y que se mantenga que quepan 4 li por fila-->
+        <!--Se añade un div dentro de cada li para poder añadir margin a este ultimo. De esta manera cada li es un
+        border-box y dado que su width=25%, con flexbox en el ul distribuye todo el viewport-width para que quepan
+        exactamente 4 li por fila. Al div interior ya se le aplica margin para poder conseguir ese efecto de que 
+        las cajas están separadas entre sí y no tienen los bordes pegados unas a otras-->
         <ul class="list-product">
             <li>
                 <div>product 1</div>
