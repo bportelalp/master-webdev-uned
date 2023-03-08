@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 30px;
+}
+
+.tree-view {
+    border: 1px solid black;
+}
+
+.tree-view ul {
+    list-style-type: none;
+}
+
+.tree-view .tree-node {
+    margin: 0.125em;
+    border: 1px solid green;
+}
+
+.tree-view .tree-node>i {
+    display: inline-block;
+    min-width: 40px;
+}
