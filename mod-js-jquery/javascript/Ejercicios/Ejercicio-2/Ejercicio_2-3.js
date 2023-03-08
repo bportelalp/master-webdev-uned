@@ -1,7 +1,7 @@
-const msgId = 'Por favor, introduzca su DNI de la forma 12345678G (8 dígitos y una letra)';
-const msgIdInvalid = 'DNI inválido. Asegúrese de introducirlo de la forma 12345678G (8 dígitos y letra';
+const msgId = 'Por favor, introduzca su DNI de la forma 12345678G (8 dígitos y una letra):';
+const msgIdInvalid = 'DNI inválido. Asegúrese de introducirlo de la forma 12345678G (8 dígitos y letra)';
 const msgIdOk = 'DNI introducido correctamente.';
-const msgDate = 'Por favor, introduzca la fecha actual (DD/MM/AAAA);';
+const msgDate = 'Por favor, introduzca la fecha actual (DD/MM/AAAA):';
 const msgDateInvalid = 'Fecha incorrecta. Asegúrese de introducirla en el formato DD/MM/AAAA';
 const msgDateOk = 'Fecha introducida correctamente.';
 const msgEmail = 'Por favor, introduzca su email:';
