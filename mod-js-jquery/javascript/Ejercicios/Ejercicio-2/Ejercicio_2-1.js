@@ -23,11 +23,11 @@ function getAge() {
 
 function generateMessage(age = 0) {
     let text;
-    if (age <= 13)
+    if (age < 14)
         text = ageLess14;
-    else if (age < 18)
+    else if (age <= 17)
         text = ageBetween14and17;
-    else if (age < 65)
+    else if (age <= 64)
         text = ageBetween18and64;
     else
         text = ageMoreThan65;
