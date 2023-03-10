@@ -13,7 +13,6 @@
         <h1>Envío</h1>
     </header>
     <article>
-
         <form class="form-send">
             <section class="form-section">
                 <div class="form-section__title">
@@ -51,9 +50,10 @@
                             <p>
                                 País:
                             </p>
-                            <select class="form-input">
-                                <option selected>Inglaterra</option>
-                                <option>España</option>
+                            <select id="country-selector" class="form-input">
+                                <!--Estas opciones se cubren desde el js-->
+                                <option>Inglaterra</option>
+                                <option selected>España</option>
                                 <option>Irlanda</option>
                                 <option>Francia</option>
                             </select>
@@ -82,7 +82,8 @@
                 <button type="reset" class="form-btn__reset">Borrar</button>
             </section>
         </form>
-        </section>
+    </article>
+    <script src="src/main.js"></script>
 </body>
 
 </html>
