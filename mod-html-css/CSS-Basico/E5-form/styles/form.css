@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/*Todo el formulario*/
+.form-send {
+    max-width: 500px;
+}
+
+/*Campos de formulario en misma fila*/
+.form-row {
+    display: flex;
+}
+
+/*Agrupa campo formulario: titulo y entrada del campo*/
+.form-group {
+    width: 100%;
+    padding: 2px;
+}
+
+/*Quita margenes por defecto de los <p> en el grupo*/
+.form-group>p {
+    margin: 0;
+}
+
+/*Añade * en rojo al final del <p> de campos requeridos. Solo afecta si está dentro de un nodo form-group*/
+.form-group p.field-required::after {
+    content: '*';
+    color: red;
+}
+
+/*Común a todas las entradas de usuario*/
+.form-input {
+    display: block;
+    border: 1px solid gray;
+    padding: 0.5em;
+    width: 100%;
+    /*Este campo se usa especialmente para quitar el gris de fondo del <select>*/
+    background-color: white;
+}
+
+.form-input:focus {
+    border: 2px solid black;
+    border-radius: 5px;
+    outline-color: black;
+}
+
+/*Las pseudoclases :valid e :invalid se activan dependiendo del contenido cuando está marcado required solo,
+así se evita el verde en el <select> que no tiene required, puesto que por defecto tiene que tener algo
+seleccionado*/
+.form-input[required]:valid {
+    border-width: 2px;
+    border-color: green;
+}
+
+.form-input[required]:invalid {
+    border-width: 2px;
+    border-color: red;
+}
+
+.form-btn__submit {
+    background-color: green;
+    color: white;
+    padding: 0.5em;
+    width: 50%;
+    cursor: pointer;
+}

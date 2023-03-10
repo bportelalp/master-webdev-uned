@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="utf-8">
+    <title>Formulario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/form.css">
+</head>
+
+<body>
+    <header>
+        <h1>Envío</h1>
+    </header>
+    <article>
+
+        <form class="form-send">
+            <section id="send-data">
+                <h3>
+                    Datos de envío
+                </h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <p class="field-required">
+                            Nombre:
+                        </p>
+                        <input type="text" class="form-input" required/>
+                    </div>
+                    <div class="form-group">
+                        <p class="field-required">
+                            Apellidos:
+                        </p>
+                        <input type="text" class="form-input" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p class="field-required">
+                        Dirección:
+                    </p>
+                    <input type="text" class="form-input" required/>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <p class="field-required">
+                            Código postal:
+                        </p>
+                        <input type="number" class="form-input" required min="0" pattern="\d{5,5}"/>
+                    </div>
+                    <div class="form-group">
+                        <p>
+                            País:
+                        </p>
+                        <select class="form-input">
+                            <option selected>Inglaterra</option>
+                            <option>España</option>
+                            <option>Irlanda</option>
+                            <option>Francia</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+            <section id="send-mode">
+                <h3>
+                    Modo de envío
+                </h3>
+                <div>
+                    <input type="radio" id="type-send-basic" name="send-type">
+                    <label for="type-send-basic">Básico</label>
+                </div>
+                <div>
+                    <input type="radio" id="type-send-instant" name="send-type">
+                    <label for="type-send-instant">Inmediato</label>
+                </div>
+            </section>
+            <section id="form-controls">
+                <button class="form-btn__submit">Enviar</button>
+            </section>
+        </form>
+        </section>
+</body>
+
+</html>
