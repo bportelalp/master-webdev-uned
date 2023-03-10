@@ -15,65 +15,71 @@
     <article>
 
         <form class="form-send">
-            <section id="send-data">
-                <h3>
+            <section class="form-section">
+                <div class="form-section__title">
                     Datos de envío
-                </h3>
-                <div class="form-row">
-                    <div class="form-group">
-                        <p class="field-required">
-                            Nombre:
-                        </p>
-                        <input type="text" class="form-input" required/>
+                </div>
+                <div class="form-section__body">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <p class="field-required">
+                                Nombre:
+                            </p>
+                            <input type="text" class="form-input" required />
+                        </div>
+                        <div class="form-group">
+                            <p class="field-required">
+                                Apellidos:
+                            </p>
+                            <input type="text" class="form-input" required />
+                        </div>
                     </div>
                     <div class="form-group">
                         <p class="field-required">
-                            Apellidos:
+                            Dirección:
                         </p>
                         <input type="text" class="form-input" required />
                     </div>
-                </div>
-                <div class="form-group">
-                    <p class="field-required">
-                        Dirección:
-                    </p>
-                    <input type="text" class="form-input" required/>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <p class="field-required">
-                            Código postal:
-                        </p>
-                        <input type="number" class="form-input" required min="0" pattern="\d{5,5}"/>
-                    </div>
-                    <div class="form-group">
-                        <p>
-                            País:
-                        </p>
-                        <select class="form-input">
-                            <option selected>Inglaterra</option>
-                            <option>España</option>
-                            <option>Irlanda</option>
-                            <option>Francia</option>
-                        </select>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <p class="field-required">
+                                Código postal:
+                            </p>
+                            <input type="number" class="form-input" required min="0" pattern="\d{5,5}" />
+                        </div>
+                        <div class="form-group">
+                            <p>
+                                País:
+                            </p>
+                            <select class="form-input">
+                                <option selected>Inglaterra</option>
+                                <option>España</option>
+                                <option>Irlanda</option>
+                                <option>Francia</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
+
             </section>
-            <section id="send-mode">
-                <h3>
+            <section class="form-section">
+                <div class="form-section__title">
                     Modo de envío
-                </h3>
-                <div>
-                    <input type="radio" id="type-send-basic" name="send-type">
-                    <label for="type-send-basic">Básico</label>
                 </div>
-                <div>
-                    <input type="radio" id="type-send-instant" name="send-type">
-                    <label for="type-send-instant">Inmediato</label>
+                <div class="form-section__body">
+                    <div class="form-radio__option">
+                        <input type="radio" id="type-send-basic" name="send-type" checked>
+                        <label for="type-send-basic">Básico</label>
+                    </div>
+                    <div class="form-radio__option">
+                        <input type="radio" id="type-send-instant" name="send-type">
+                        <label for="type-send-instant">Inmediato</label>
+                    </div>
                 </div>
             </section>
-            <section id="form-controls">
-                <button class="form-btn__submit">Enviar</button>
+            <section class="form-controls">
+                <button type="submit" class="form-btn__submit">Enviar</button>
+                <button type="reset" class="form-btn__reset">Borrar</button>
             </section>
         </form>
         </section>
