@@ -94,10 +94,14 @@ seleccionado*/
 }
 
 
+/*
+CONTROLES DE ENVIO FORMULARIO
+*/
 .form-controls {
     display: flex;
 }
 
+/*Cualquier botón dentro*/
 .form-controls>button {
     padding: 0.5em;
     width: 50%;
