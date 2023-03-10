@@ -1,0 +1,54 @@
+body {
+    font-family: 'Quicksand', Georgia, 'Times New Roman';
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(106, 152, 212);
+    color: white;
+    min-height: 1em;
+}
+
+.nav-menu {
+    background-color: rgb(106, 152, 212);
+    color: white;
+    padding: 10px 0px;
+}
+
+.nav-menu a {
+    color: white;
+
+}
+
+.nav-menu > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0em 0.5em;
+    display: flex;
+}
+
+.nav-link {
+    margin: 0.25em;
+    border: 2px solid black;
+    border-radius: 0.5em;
+    width: 100%;
+}
+.nav-link > a {
+    display: block;
+    padding: 0.5em;
+    text-decoration: none;
+    text-align: center;
+}
+
+.nav-link:hover {
+    background-color: cadetblue;
+}
+
+.page {
+    height: 100%;
+}

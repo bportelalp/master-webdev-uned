@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="utf-8">
+    <title>Formulario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/form.css">
+</head>
+
+<body>
+    <header>
+        <h1>Envío</h1>
+    </header>
+    <article>
+        <form class="form-send">
+            <section class="form-section">
+                <div class="form-section__title">
+                    Datos de envío
+                </div>
+                <div class="form-section__body">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <p class="field-required">
+                                Nombre:
+                            </p>
+                            <input type="text" class="form-input" required />
+                        </div>
+                        <div class="form-group">
+                            <p class="field-required">
+                                Apellidos:
+                            </p>
+                            <input type="text" class="form-input" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <p class="field-required">
+                            Dirección:
+                        </p>
+                        <input type="text" class="form-input" required />
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <p class="field-required">
+                                Código postal:
+                            </p>
+                            <input type="number" class="form-input" required min="0" pattern="\d{5,5}" />
+                        </div>
+                        <div class="form-group">
+                            <p>
+                                País:
+                            </p>
+                            <select id="country-selector" class="form-input">
+                                <!--Estas opciones se cubren desde el js-->
+                                <option>Inglaterra</option>
+                                <option selected>España</option>
+                                <option>Irlanda</option>
+                                <option>Francia</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <section class="form-section">
+                <div class="form-section__title">
+                    Modo de envío
+                </div>
+                <div class="form-section__body">
+                    <div class="form-radio__option">
+                        <input type="radio" id="type-send-basic" name="send-type" checked>
+                        <label for="type-send-basic">Básico</label>
+                    </div>
+                    <div class="form-radio__option">
+                        <input type="radio" id="type-send-instant" name="send-type">
+                        <label for="type-send-instant">Inmediato</label>
+                    </div>
+                </div>
+            </section>
+            <section class="form-controls">
+                <button type="submit" class="form-btn__submit">Enviar</button>
+                <button type="reset" class="form-btn__reset">Borrar</button>
+            </section>
+        </form>
+    </article>
+    <script src="src/main.js"></script>
+</body>
+
+</html>

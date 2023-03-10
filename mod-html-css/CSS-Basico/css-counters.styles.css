@@ -1,0 +1,36 @@
+body {
+    font-family: 'Quicksand', Georgia, 'Times New Roman';
+}
+
+.ul-ordered {
+    list-style-type: none;
+    counter-reset: list-shop;
+}
+
+.ul-ordered>li::before {
+    counter-increment: list-shop;
+    content: "Item "counter(list-shop);
+    margin-right: 10px;
+}
+
+.ul-section {
+    list-style-type: none;
+    counter-reset: section-level-1;
+}
+
+.ul-section>li::before {
+    counter-increment: section-level-1;
+    content: counter(section-level-1);
+    margin-right: 10px;
+}
+
+.ul-subsection {
+    list-style-type: none;
+    counter-reset: section-level-2;
+}
+
+.ul-subsection>li::before {
+    counter-increment: section-level-2;
+    content: counter(section-level-1)"."counter(section-level-2);
+    margin-right: 10px;
+}

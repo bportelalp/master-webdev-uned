@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Contadores en CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css-counters.styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <article>
+
+        <head>
+            <h1>
+                Contadores de CSS
+            </h1>
+        </head>
+        <!--Selectores atributos-->
+        <section>
+            <h1>
+                Uso
+            </h1>
+            <p>
+                Son como variables que el CSS controla mediante reglas para ajustar la apariencia del contenido basado
+                en su ubicación en el contenido. Su uso más tipico es para titulos en una lista enumerada y con
+                jerarquía, por ejemplo.
+            </p>
+            <p>
+                Se muestra un ejemplo en una lista no ordenada que se transforma en ordenada gracias al contador. Existe
+                un contador que se resetea en <code>ul-ordered</code> y que a cada <code>li</code> toma un nuevo valor
+                de incremento, por eso aparecen los items numerados
+            </p>
+            <ul class="ul-ordered">
+                <li>Pan</li>
+                <li>Verduras</li>
+                <li>Carne de cerdo</li>
+                <li>Bacalao</li>
+            </ul>
+            <p>
+                También se pueden meter hijos dentro en varios niveles, porque podemos cambiar el nombre del contador
+            </p>
+            <ul class="ul-section">
+                <li>
+                    Título 1
+                    <ul class="ul-subsection">
+                        <li>Título 1.1</li>
+                        <li>Título 1.2</li>
+                    </ul>
+                </li>
+
+                <li>
+                    Título 2
+                    <ul class="ul-subsection">
+                        <li>Título 2.1</li>
+                        <li>Título 2.2</li>
+                        <li>Título 2.3</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section>
+        </section>
+    </article>
+</body>
+
+</html>
