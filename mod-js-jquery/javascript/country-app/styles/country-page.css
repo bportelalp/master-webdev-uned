@@ -9,3 +9,19 @@
 .country-card-body {
     padding: 0em 1em;
 }
+
+.country-field {
+    margin: 0.125em 0.25em;
+}
+
+.country-field > span {
+    font-weight: bold;
+}
+
+.country-img {
+    margin: 0.125em;
+}
+
+.country-img > img {
+    width: 100px;
+}

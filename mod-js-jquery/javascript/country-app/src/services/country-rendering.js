@@ -8,8 +8,21 @@ function renderCountryDetail(country, lang = 'spa'){
     document.getElementById('country-common-name').innerHTML = nameTranslated.common;
     document.getElementById('country-common-name-span').innerHTML = nameTranslated.common;
     document.getElementById('country-official-name').innerHTML = nameTranslated.official;
-    const nativeName = Object.entries(country.name)[0][1].nativeName.official;
+    const nativeName = Object.entries(country.name.nativeName)[0][1].official;
     document.getElementById('country-native-name').innerHTML = nativeName;
+    document.getElementById('country-capital').innerHTML = country.capital[0];
+    const population = new Intl.NumberFormat('es-ES').format(country.population);
+    document.getElementById('country-population').innerHTML = population;
+    document.getElementById('country-flag').src = country.flags.png;
+    document.getElementById('country-coatOfArms').src = country.coatOfArms.png;
+
+    const currencies = country.currencies;
+    let currencyText = '';
+    for (const [key, value] of Object.entries(currencies)) {
+        currencyText += `${value.name} (${value.symbol}) `;
+    }
+    document.getElementById('country-currency').innerHTML = currencyText;
+    
 }
 
 
