@@ -1,0 +1,11 @@
+.country-card {
+    border: 2px solid black;
+}
+
+.country-card-title {
+    padding: 0em 1em;
+}
+
+.country-card-body {
+    padding: 0em 1em;
+}

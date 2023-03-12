@@ -1,29 +1,30 @@
-import { getAllCountries, getRegionCountries } from "./country-api.js";
-let allCountries = [];
-
-
-
-async function load() {
-    allCountries = await getAllCountries();
+export {
+    renderCountryList,
+    renderCountryDetail
 }
 
-function render(countries = [], lang = 'spa') {
+function renderCountryDetail(country, lang = 'spa'){
+    const nameTranslated = country.translations[lang];
+    document.getElementById('country-common-name').innerHTML = nameTranslated.common;
+    document.getElementById('country-common-name-span').innerHTML = nameTranslated.common;
+    document.getElementById('country-official-name').innerHTML = nameTranslated.official;
+    const nativeName = Object.entries(country.name)[0][1].nativeName.official;
+    document.getElementById('country-native-name').innerHTML = nativeName;
+}
+
+
+/**
+ * Render a container in html showing the country
+ * @param {*} countries list of country objects
+ * @param {*} lang language to render the contaiener
+ */
+function renderCountryList(countries = [], lang = 'spa') {
     const section = document.getElementById('render-countries');
     section.innerHTML = '';
     for (const country of countries.sort((a,b) => a.translations[lang].common > b.translations[lang].common)) {
         const divCountry = createCountryContainer(country, lang);
         section.appendChild(divCountry);
     }
-}
-
-function applyFilter() {
-    let countries = allCountries;
-    const selector = document.getElementById('select-region');
-
-    if (selector.value !== 'all') {
-        countries = countries.filter(c => c.region === selector.value);
-    }
-    render(countries);
 }
 
 function createCountryContainer(country, lang = 'spa'){
@@ -48,12 +49,9 @@ function createImgFlag(country){
 
 function createImgCaption(country, lang = 'spa'){
     const figCaption = document.createElement('figcaption');
-    figCaption.innerHTML = country.translations[lang].common;
+    const a = document.createElement('a');
+    a.href = `./country-page.html?country=${country.name.common}`;
+    a.innerHTML = country.translations[lang].common;
+    figCaption.appendChild(a);
     return figCaption;
 }
-window.onload = async () => {
-    document.getElementById('select-region').value = 'all';
-    await load();
-    applyFilter();
-};
-document.getElementById('btn-filter').addEventListener('click', applyFilter);

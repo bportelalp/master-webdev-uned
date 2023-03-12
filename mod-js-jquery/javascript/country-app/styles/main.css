@@ -1,0 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', Georgia, 'Times New Roman';
+}
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+}

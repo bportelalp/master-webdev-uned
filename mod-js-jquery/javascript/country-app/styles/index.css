@@ -1,16 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Quicksand', Georgia, 'Times New Roman';
-}
-
-.d-flex {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .country-container {
     margin: 0.5em;
     border: 2px solid black;
