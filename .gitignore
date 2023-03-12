@@ -108,3 +108,4 @@ dist
 
 # Carpeta para preparar los ejercicios para entregar
 entrega-uned/
+*.lnk
