@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Lista de países</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/index.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Lista de países</h1>
+    </header>
+    <article>
+        <section class="d-flex">
+            <div>
+                <div>Región</div>
+                <select id="select-region">
+                    <option value="all" selected>Todas</option>
+                    <option value="Africa">África</option>
+                    <option value="Americas">América</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Europe">Europa</option>
+                    <option value="Oceania">Oceanía</option>
+                </select>
+            </div>
+            <div>
+                <div>&nbsp;</div>
+            <button id="btn-filter">Filtrar</button>
+            </div>
+        </section>
+        <section id="render-countries" class="d-flex">
+            <!-- <div class="country-container">
+                <img class="country-flag" src="https://flagcdn.com/w320/no.png"/>
+                <figcaption>Noruega</figcaption>
+            </div> -->
+        </section>
+    </article>
+    <script src="./src/index.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+.country-container {
+    margin: 0.5em;
+    border: 2px solid black;
+    border-radius: 2px;
+}
+
+.country-container > figcaption {
+    display: block;
+    text-align: center;
+}
+
+.country-flag {
+    width: 150px;
+}
