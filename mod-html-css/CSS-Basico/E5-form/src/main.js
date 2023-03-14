@@ -22,7 +22,7 @@ async function fetchCountries() {
         .then(response => {
             const countries = response
                 .map(obj => obj.translations.spa.common)
-                .sort((a, b) => a > b);
+                .sort((a, b) => a.localeCompare(b));
             return countries;
         })
 }
