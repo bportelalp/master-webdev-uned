@@ -42,10 +42,11 @@
                     <div class="form-row">
                         <div class="form-group">
                             <p class="field-required">
-                                Código postal (5 cifras):
+                                Código postal (<span id="zip-code-digits">5 cifras</span>):
                             </p>
-                            <!--type="text" para que exija 5 cifras. Si fuese number, ignora el pattern-->
-                            <input type="text" class="form-input" required pattern="^\d{5}$" />
+                            <!--type="text" para que exija 5 cifras. Si fuese number, ignora el pattern.
+                            Con JS se intenta rellenar según el país.-->
+                            <input id="zip-code" type="text" class="form-input" required pattern="^\d{5}$" />
                         </div>
                         <div class="form-group">
                             <p>
