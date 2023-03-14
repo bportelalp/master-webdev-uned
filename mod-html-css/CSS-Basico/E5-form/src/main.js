@@ -26,7 +26,7 @@ async function fetchCountries() {
         .then(response => {
             const countries = response
                 .map(obj => ({ name: obj.name.common, translation: obj.translations.spa.common }))
-                .sort((a, b) => a.translation > b.translation);
+                .sort((a, b) => a.translation.localeCompare(b.translation));
             return countries;
         })
 }
