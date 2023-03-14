@@ -3,25 +3,39 @@ export {
     renderCountryDetail
 }
 
+const elements = {
+    commonName: document.getElementById('country-common-name'),
+    commonNameSpan: document.getElementById('country-common-name'),
+    officialName: document.getElementById('country-official-name'),
+    nativeName: document.getElementById('country-native-name'),
+    capital: document.getElementById('country-capital'),
+    population: document.getElementById('country-population'),
+    flag: document.getElementById('country-flag'),
+    coatOfArms: document.getElementById('country-coatOfArms'),
+    currency: document.getElementById('country-currency')
+}
+
 function renderCountryDetail(country, lang = 'spa'){
     const nameTranslated = country.translations[lang];
-    document.getElementById('country-common-name').innerHTML = nameTranslated.common;
-    document.getElementById('country-common-name-span').innerHTML = nameTranslated.common;
-    document.getElementById('country-official-name').innerHTML = nameTranslated.official;
+    elements.commonName.innerHTML = nameTranslated.common;
+    elements.commonNameSpan.innerHTML = nameTranslated.common;
+    elements.officialName.innerHTML = nameTranslated.official;
+
     const nativeName = Object.entries(country.name.nativeName)[0][1].official;
-    document.getElementById('country-native-name').innerHTML = nativeName;
-    document.getElementById('country-capital').innerHTML = country.capital[0];
+    elements.nativeName.innerHTML = nativeName;
+    elements.capital.innerHTML = country.capital[0];
+    
     const population = new Intl.NumberFormat('es-ES').format(country.population);
-    document.getElementById('country-population').innerHTML = population;
-    document.getElementById('country-flag').src = country.flags.png;
-    document.getElementById('country-coatOfArms').src = country.coatOfArms.png;
+    elements.population.innerHTML = population;
+    elements.flag.src = country.flags.png;
+    elements.coatOfArms.src = country.coatOfArms.png;
 
     const currencies = country.currencies;
     let currencyText = '';
     for (const [key, value] of Object.entries(currencies)) {
         currencyText += `${value.name} (${value.symbol}) `;
     }
-    document.getElementById('country-currency').innerHTML = currencyText;
+    elements.currency.innerHTML = currencyText;
     
 }
 
