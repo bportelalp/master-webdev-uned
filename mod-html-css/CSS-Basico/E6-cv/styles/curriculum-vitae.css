@@ -3,9 +3,54 @@
 }
 
 body {
-    font-family: 'Quicksand', Georgia, 'Times New Roman';
+    font-family: 'Kanit', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    margin-bottom: 0.125em;
+    margin-top: 0.5em;
+    font-weight: 900;
 }
 
 .cv-intro {
     text-align: center;
+}
+
+.cv-skills {
+    display: flex;
+}
+
+
+.cv-old-job-history {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cv-old-job {
+    width: 50%;
+    display: flex;
+}
+
+.cv-old-job > .job-icon {
+    padding: 0px 10px;
+    font-size: xx-large;
+}
+
+.job-icon > span {
+    color: rgb(117, 159, 179);
+    background-color: rgb(187, 220, 235);
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+    height: 1.5em;
+    width: 1.5em;
+    border: 2px solid rgb(117, 159, 179);
+    border-radius: 50%;
+}
+
+
+
+.cv-current-job {
+    text-align: center;
+    margin: auto
 }
