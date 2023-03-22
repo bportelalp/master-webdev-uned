@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+}
+
+section {
+    font-size: 1rem;
+}
+
+h1, h2, h3, h4, h5 {
+    margin-bottom: 0.125em;
+    margin-top: 0.5em;
+    font-weight: 900;
+}
+
+.container {
+    width: 50em;
+    margin: auto;
+}
+
+@media (max-width: 800px){
+    .container {
+        width: 100%;
+        margin: auto;
+    }
+}
