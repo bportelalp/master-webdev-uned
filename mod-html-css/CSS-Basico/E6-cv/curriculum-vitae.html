@@ -3,74 +3,80 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Curriculum vitae</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/curriculum-vitae.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/page.css">
+    <title>Curriculum vitae</title>
+
+    <!--Fuentes de google-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+
+    <!--Archivos de CSS-->
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/curriculum-vitae.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/page.css">
+    
+    <!--Uso de bootstrap-icons para añadir iconos en los trabajos-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 
 <body>
     <article class="container">
-
-        <article class="cv-intro">
+        <hr>
+        <section class="cv-intro">
             <h1 class="cv-intro-name">Nombre y apellidos</h1>
-            <h4>Ingeniero en desarrollo de aplicaciones</h4>
+            <h2>Profesión como programador</h2>
             <div>
-                Abierto a empleo
+                <span class="cv-open-to-work">
+                    Abierto a empleo
+                </span>
             </div>
-        </article>
+        </section>
         <hr>
-        <article class="cv-skills">
+        <section class="cv-skills">
             <section class="cv-skills-detail">
-                <h5>¿Que hago?</h5>
+                <h2>¿Que hago?</h2>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi aspernatur pariatur saepe iste? Iure
-                    debitis voluptatem ipsa, voluptates adipisci, autem cupiditate provident eaque minima, sunt dolorem!
-                    Debitis est nisi temporibus!
+                    Describa en un par de líneas las tareas que desempeña en su puesto de
+                    trabajo. Muestre sus cualidades más destacadas y lo que le diferencia del resto. Indique el stack
+                    tecnológico que domina.
+
                 </p>
             </section>
             <section class="cv-skills-detail">
-                <h5>¿Que puedo hacer?</h5>
+                <h2>¿Que puedo hacer?</h2>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi aspernatur pariatur saepe iste? Iure
-                    debitis voluptatem ipsa, voluptates adipisci, autem cupiditate provident eaque minima, sunt dolorem!
-                    Debitis est nisi temporibus!
+                    Describa en un par de líneas a qué aspira profesionalmente y cual es su objetivo a largo plazo.
+                    Destaque sus capacidades para alcanzar las aspiraciones que se describen.
                 </p>
             </section>
-        </article>
+        </section>
         <hr>
-        <article class="cv-history">
+        <section class="cv-history">
             <section class="cv-current-job">
-                <h5>Trabajo</h5>
+                <h2>Trabajo actual</h2>
+                <small>día/mes/año - Actualmente</small>
                 <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni asperiores beatae recusandae facilis
-                    enim expedita tenetur ad? Quo, harum dignissimos nemo eius eveniet ipsam voluptas! Voluptatibus
-                    soluta
-                    temporibus suscipit aliquam.
+                    Indique su trabajo actual y sus funciones, tareas, méritos y habilidades que pone en práctica.
+                    Relaciónelo con sus capacidades descritas en las descripciones anteriores. Comente las tecnologías
+                    que utiliza para alcanzar los objetivos que se le piden.
                 </p>
             </section>
             <section class="cv-old-job-history">
-                <div class="cv-old-job">
+                <section class="cv-old-job">
                     <div class="job-icon">
                         <span>
                             <i class="bi bi-trophy-fill"></i>
                         </span>
                     </div>
                     <div class="cv-old-job-data">
-                        <h1>Trabajo 1</h1>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rem neque
-                                exercitationem
-                                laudantium sequi. Perspiciatis magnam delectus necessitatibus totam esse ea deserunt
-                                voluptatem
-                                magni, temporibus, accusamus, iusto eos maiores ducimus?
-                            </p>
+                        <h3>Trabajo 1</h3>
+                        <small>día/mes/año - día/mes/año</small>
+                        <p>
+                            Describa brevemente sus funciones en trabajos anteriores y aporte las experiencias y
+                            conocimientos que adquirió durante esta etapa profesional.
+                        </p>
                     </div>
-                </div>
+                </section>
                 <div class="cv-old-job">
                     <div class="job-icon">
                         <span>
@@ -78,56 +84,78 @@
                         </span>
                     </div>
                     <div class="cv-old-job-data">
-                        <h1>Trabajo 2</h1>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rem neque
-                                exercitationem
-                                laudantium sequi. Perspiciatis magnam delectus necessitatibus totam esse ea deserunt
-                                voluptatem
-                                magni, temporibus, accusamus, iusto eos maiores ducimus?
-                            </p>
+                        <h3>Trabajo 2</h3>
+                        <small>día/mes/año - día/mes/año</small>
+                        <p>
+                            Describa brevemente sus funciones en trabajos anteriores y aporte las experiencias y
+                            conocimientos que adquirió durante esta etapa profesional.
+                        </p>
                     </div>
                 </div>
                 <div class="cv-old-job">
                     <div class="job-icon">
                         <span>
-                            <i class="bi bi-hourglass-split"></i>
+                            <i class="bi bi-archive-fill"></i>
                         </span>
                     </div>
                     <div class="cv-old-job-data">
-                        <h1>Trabajo 3</h1>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rem neque
-                                exercitationem
-                                laudantium sequi. Perspiciatis magnam delectus necessitatibus totam esse ea deserunt
-                                voluptatem
-                                magni, temporibus, accusamus, iusto eos maiores ducimus?
-                            </p>
+                        <h3>Trabajo 3</h3>
+                        <small>día/mes/año - día/mes/año</small>
+                        <p>
+                            Describa brevemente sus funciones en trabajos anteriores y aporte las experiencias y
+                            conocimientos que adquirió durante esta etapa profesional.
+                        </p>
                     </div>
                 </div>
                 <div class="cv-old-job">
                     <div class="job-icon">
                         <span>
-                            <i class="bi bi-hourglass-split"></i>
+                            <i class="bi bi-bank"></i>
                         </span>
                     </div>
                     <div class="cv-old-job-data">
-                        <h1>Trabajo 4</h1>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rem neque
-                                exercitationem
-                                laudantium sequi. Perspiciatis magnam delectus necessitatibus totam esse ea deserunt
-                                voluptatem
-                                magni, temporibus, accusamus, iusto eos maiores ducimus?
-                            </p>
+                        <h3>Trabajo 4</h3>
+                        <small>día/mes/año - día/mes/año</small>
+                        <p>
+                            Describa brevemente sus funciones en trabajos anteriores y aporte las experiencias y
+                            conocimientos que adquirió durante esta etapa profesional.
+                        </p>
+
                     </div>
                 </div>
+                <!--Se pueden añadir tantos <div class="cv-old-job"> como sea necesario. Simplemente copiar-pegar y editar-->
+                <!--Para poner iconos facilmente, puede consultar el catálogo de bootstrap-icons: https://icons.getbootstrap.com/ -->
             </section>
-        </article>
+        </section>
         <hr>
         <section class="cv-social-media">
+            <div>
+                <h2>En las redes sociales</h2>
+                <p>
+                    Incluya enlaces a sus redes sociales profesionales o repositorios propios.
 
+                <div class="cv-ref-social-media">
+                    <i class="bi bi-linkedin"></i>
+                    <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+
+                </div>
+                <div class="cv-ref-social-media">
+                    <i class="bi bi-github"></i>
+                    <a href="https://github.com/" target="_blank">GitHub</a>
+                </div>
+                </p>
+                <div class="cv-video-label">
+                    Si dispone de vídeo currículum, insértelo. Para YouTube, puede consultar la
+                    <a href="https://support.google.com/youtube/answer/171780?hl=es" target="_blank">ayuda</a>.
+                </div>
+            </div>
+
+            <div class="cv-video">
+                <!--Insertar aqui <video> o <iframe> si se desea incluir un video-cv y quitar la imagen -->
+                <img src="./img/video-play.png" alt="Reproductor de vídeo">
+            </div>
         </section>
+        <hr>
     </article>
 </body>
 

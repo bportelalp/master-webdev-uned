@@ -1,3 +1,13 @@
+/*
+Archivo CSS de distribución general de la página
+*/
+
+/*Se definen colores en CSS variables. Se usa en la pseudoclase :root para que esten disponibles en todo el documento*/
+:root {
+    --blue-light: rgb(117, 159, 179);
+    --blue-x-light: rgb(187, 220, 235);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -6,24 +16,37 @@ body {
     font-family: 'Kanit', sans-serif;
 }
 
-section {
-    font-size: 1rem;
-}
-
+/* Editar espaciados por defecto de los títulos*/
 h1, h2, h3, h4, h5 {
     margin-bottom: 0.125em;
     margin-top: 0.5em;
-    font-weight: 900;
 }
 
+/*Contenedor del cv. fija un ancho y establece margen automático para centrar la página en pantallas grandes.*/
 .container {
-    width: 50em;
+    width: 1000px;
     margin: auto;
+    
+    padding: 0px 20px;
 }
 
-@media (max-width: 800px){
+/*Para pantallas pequeñas, establece el ancho al 100% del viewport*/
+@media (max-width: 1050px){
     .container {
         width: 100%;
         margin: auto;
     }
+}
+
+
+/*Estilos para los enlaces del cv. Se quita el subrayado, sólo cuando :hover. Al aplicar colores
+se ignora el color de :link y :visited por defecto*/
+a {
+    text-decoration: none;
+    color: var(--blue-light);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: cornflowerblue;
 }

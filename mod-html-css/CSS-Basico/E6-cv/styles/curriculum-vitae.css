@@ -1,57 +1,124 @@
-.cv {
-    width: 300px;
-    margin: auto;
-}
+/*
+Archivo CSS de las clases que modelan el curriculum
+*/
 
 .cv-intro {
-    
     text-align: center;
-    background-image: url(./../img/programmer.png);
+    /*Colocar imagen de fondo*/
+    background-image: url(./../img/bg-bits-blue-transparent.png);
     background-size: 100%;
-    height: 15em;
+    height: 20em;
+    /*Flexbox para hacer que todos los elementos se distribuyan en el espacio disponible*/
+    display: flex;
+    flex-direction: column;
 }
 
+.cv-intro>* {
+    /*Factores de crecimiento de los elementos dentro de flex para que ocupen el espacio disponible*/
+    flex: 1 1 auto;
+}
 
-.cv-intro > .cv-intro-name {
+/*Más grande el nombre*/
+.cv-intro>.cv-intro-name {
     font-size: 3em;
 }
 
+/*Estilo para etiqueta de abierto a empleo*/
+.cv-open-to-work {
+    padding: 0.5em;
+    border: 2px solid darkblue;
+    background-color: darkblue;
+    font-weight: bolder;
+    border-radius: 10px;
+    color: white;
+}
+
+/*Sección de habilidades*/
 .cv-skills {
     display: flex;
 }
 
+/*Cada detalle de habilidades*/
+.cv-skills-detail {
+    margin: 0px 10px;
+    text-align: justify;
+    width: 100%;
+}
 
+.cv-current-job {
+    text-align: center;
+    margin: auto
+}
+
+/*Dispone los trabajos antiguos como un contenedor flexible con flex-wrap. Debido al tamaño que
+toma el .cv-old-job del 50% siempre se mostrarán dos por fila, así que si hay i.e. 5-6 trabajos se mostrarán
+3 filas*/
 .cv-old-job-history {
     display: flex;
     flex-wrap: wrap;
 }
 
-.cv-old-job {
+.cv-old-job-history>.cv-old-job {
     width: 50%;
     padding: 0px 2em;
     display: flex;
 }
 
-.cv-old-job > .job-icon {
+/*El icono de trabajos antiguos se usa de bootstrap-icons, pero se aumenta el tamaño de los mismos mediante
+un aumento del tamaño de letra solo para ellos*/
+.cv-old-job-history>.cv-old-job>.job-icon {
     padding: 0px 10px;
     font-size: xx-large;
 }
 
-.job-icon > span {
-    color: rgb(117, 159, 179);
-    background-color: rgb(187, 220, 235);
+/*Estilos del contenedor de los iconos, para que aparezca redondeado y con el icono centrado*/
+.job-icon>span {
+    display: inline-block;
+    color: var(--blue-light);
+    background-color: var(--blue-x-light);
+    border: 2px solid var(--blue-light);
+    border-radius: 50%;
     vertical-align: middle;
     text-align: center;
-    display: inline-block;
     height: 1.5em;
     width: 1.5em;
-    border: 2px solid rgb(117, 159, 179);
-    border-radius: 50%;
 }
 
 
+.cv-social-media {
+    display: flex;
+}
 
-.cv-current-job {
+.cv-social-media>* {
+    width: 100%;
+}
+
+/*Estilos del espacio donde poder incluir un video*/
+.cv-video {
+    height: 15em;
+    width: 50em;
+    /*Si se inserta video, se debería eliminar padding*/
+    padding: 3em;
+    margin-left: 0.5em;
+    border: 2px solid var(--blue-light);
+    border-radius: 8px;
+    /*Centra el interior*/
     text-align: center;
-    margin: auto
+}
+
+/*Esta clase aplica tanto a la imagen cuando no hay video como si lo hubiera. Seguir instrucciones en el HTML*/
+.cv-video>img,
+.cv-video>video,
+.cv-video>iframe {
+    /*Limita el tamaño al contenedor*/
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/*Estilo de líneas horizontales que separan las secciones*/
+hr {
+    border-color: var(--blue-light);
+    /*Extiende ligeramente las líneas fuera de la caja*/
+    margin-left: -15px;
+    margin-right: -15px;
 }
