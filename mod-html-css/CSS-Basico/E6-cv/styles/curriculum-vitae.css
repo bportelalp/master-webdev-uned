@@ -50,29 +50,39 @@ Archivo CSS de las clases que modelan el curriculum
     margin: auto
 }
 
-/*Dispone los trabajos antiguos como un contenedor flexible con flex-wrap. Debido al tamaño que
-toma el .cv-old-job del 50% siempre se mostrarán dos por fila, así que si hay i.e. 5-6 trabajos se mostrarán
-3 filas*/
-.cv-old-job-history {
+/*Esta clase aplica a los contenedores del historial de trabajo y de formación académica.
+Es un contenedor flexible con flex-wrap. Sus hijos, .cv-card-info, segun la clase de tamaño que tomen
+se colocaran de una manera u otra.
+Con card-50: siempre se mostrarán dos por fila, así que si hay i.e. 5-6 trabajos se mostrarán
+3 filas
+Con card-100: uno por fila*/
+.cv-card-info-history {
     display: flex;
     flex-wrap: wrap;
 }
 
-.cv-old-job-history>.cv-old-job {
-    width: 50%;
-    padding: 0px 2em;
+.cv-card-info-history>.cv-card-info {
+    padding: 0px 1em;
     display: flex;
 }
 
-/*El icono de trabajos antiguos se usa de bootstrap-icons, pero se aumenta el tamaño de los mismos mediante
+.card-50 {
+    width: 50%;
+}
+
+.card-100 {
+    width: 100%;
+}
+
+/*El icono de las tarjetas se usa de bootstrap-icons, pero se aumenta el tamaño de los mismos mediante
 un aumento del tamaño de letra solo para ellos*/
-.cv-old-job-history>.cv-old-job>.job-icon {
-    padding: 0px 10px;
+.cv-card-info>.card-icon {
+    padding: 0px 5px;
     font-size: xx-large;
 }
 
 /*Estilos del contenedor de los iconos, para que aparezca redondeado y con el icono centrado*/
-.job-icon>span {
+.card-icon>span {
     display: inline-block;
     color: var(--blue-light);
     background-color: var(--blue-x-light);
@@ -84,6 +94,29 @@ un aumento del tamaño de letra solo para ellos*/
     width: 1.5em;
 }
 
+
+/*Aplica color a las fechas del historial*/
+.cv-historial-date {
+    color: var(--blue-light);
+}
+
+/*Cursiva para el titulo del historial*/
+.cv-historial-title {
+    font-style: italic;
+}
+
+/*Estilo para el nombre de la institución, sea empresa/centro educativo y reduce el tamaño al 80%*/
+.cv-historial-institution {
+    font-size: 0.8em;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+/*Centra el título de formación académica*/
+.cv-training-title-section {
+    width: 100%;
+    text-align: center;
+}
 
 .cv-social-media {
     display: flex;
