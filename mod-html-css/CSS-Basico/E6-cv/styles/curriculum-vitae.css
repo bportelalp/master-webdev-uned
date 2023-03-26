@@ -94,24 +94,28 @@ un aumento del tamaño de letra solo para ellos*/
     width: 1.5em;
 }
 
-.cv-training-title-section {
-    width: 100%;
-    text-align: center;
-}
 
-.cv-training-year {
-    display: inline-block;
+/*Aplica color a las fechas del historial*/
+.cv-historial-date {
     color: var(--blue-light);
 }
 
-.cv-training-title {
+/*Cursiva para el titulo del historial*/
+.cv-historial-title {
     font-style: italic;
 }
 
-.cv-training-institution {
-    font-size: 0.9em;
+/*Estilo para el nombre de la institución, sea empresa/centro educativo y reduce el tamaño al 80%*/
+.cv-historial-institution {
+    font-size: 0.8em;
     font-weight: 300;
     text-transform: uppercase;
+}
+
+/*Centra el título de formación académica*/
+.cv-training-title-section {
+    width: 100%;
+    text-align: center;
 }
 
 .cv-social-media {

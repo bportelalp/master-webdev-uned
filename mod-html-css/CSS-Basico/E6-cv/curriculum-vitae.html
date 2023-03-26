@@ -22,6 +22,7 @@
 <body>
     <article class="container">
         <hr>
+        <!--Introducción: Datos básicos-->
         <section class="cv-intro">
             <h1 class="cv-intro-name">Nombre y apellidos</h1>
             <h2>Profesión como programador</h2>
@@ -32,6 +33,7 @@
             </div>
         </section>
         <hr>
+        <!--Habilidades generales-->
         <section class="cv-skills">
             <section class="cv-skills-detail">
                 <h2>¿Que hago?</h2>
@@ -51,10 +53,11 @@
             </section>
         </section>
         <hr>
-        <section class="cv-history">
+        <!--Historial laboral-->
+        <section class="cv-card-info-history">
             <section class="cv-current-job">
-                <h2>Trabajo actual</h2>
-                <small>día/mes/año - Actualmente</small>
+                <h2>Trabajo actual - <span class="cv-historial-institution">Empresa actual</span></h2>
+                <small class="cv-historial-date">día/mes/año - día/mes/año</small>
                 <p>
                     Indique su trabajo actual y sus funciones, tareas, méritos y habilidades que pone en práctica.
                     Relaciónelo con sus capacidades descritas en las descripciones anteriores. Comente las tecnologías
@@ -69,8 +72,12 @@
                         </span>
                     </div>
                     <div>
-                        <h3>Trabajo 1</h3>
-                        <small>día/mes/año - día/mes/año</small>
+                        <h3>
+                            <span class="cv-historial-title">Trabajo 1</span>
+                            <span>-</span>
+                            <span class="cv-historial-institution">Empresa</span>
+                        </h3>
+                        <small class="cv-historial-date">día/mes/año - día/mes/año</small>
                         <p>
                             Describa brevemente sus funciones en trabajos anteriores y aporte las experiencias y
                             conocimientos que adquirió durante esta etapa profesional.
@@ -84,8 +91,12 @@
                         </span>
                     </div>
                     <div>
-                        <h3>Trabajo 2</h3>
-                        <small>día/mes/año - día/mes/año</small>
+                        <h3>
+                            <span class="cv-historial-title">Trabajo 2</span>
+                            <span>-</span>
+                            <span class="cv-historial-institution">Empresa</span>
+                        </h3>
+                        <small class="cv-historial-date">día/mes/año - día/mes/año</small>
                         <p>
                             Describa brevemente sus funciones en trabajos anteriores y aporte las experiencias y
                             conocimientos que adquirió durante esta etapa profesional.
@@ -99,8 +110,12 @@
                         </span>
                     </div>
                     <div class="cv-card-info-data">
-                        <h3>Trabajo 3</h3>
-                        <small>día/mes/año - día/mes/año</small>
+                        <h3>
+                            <span class="cv-historial-title">Trabajo 3</span>
+                            <span>-</span>
+                            <span class="cv-historial-institution">Empresa</span>
+                        </h3>
+                        <small class="cv-historial-date">día/mes/año - día/mes/año</small>
                         <p>
                             Describa brevemente sus funciones en trabajos anteriores y aporte las experiencias y
                             conocimientos que adquirió durante esta etapa profesional.
@@ -114,8 +129,12 @@
                         </span>
                     </div>
                     <div>
-                        <h3>Trabajo 4</h3>
-                        <small>día/mes/año - día/mes/año</small>
+                        <h3>
+                            <span class="cv-historial-title">Trabajo 4</span>
+                            <span>-</span>
+                            <span class="cv-historial-institution">Empresa</span>
+                        </h3>
+                        <small class="cv-historial-date">día/mes/año - día/mes/año</small>
                         <p>
                             Describa brevemente sus funciones en trabajos anteriores y aporte las experiencias y
                             conocimientos que adquirió durante esta etapa profesional.
@@ -128,24 +147,24 @@
             </section>
         </section>
         <hr>
+        <!--Historial académico-->
         <section class="cv-card-info-history">
             <div class="cv-training-title-section">
                 <h2>Formación académica</h2>
-
             </div>
             <div class="cv-card-info card-100">
                 <div class="card-icon">
                     <span>
-                        <i class="bi bi-archive-fill"></i>
+                        <i class="bi bi-book-half"></i>
                     </span>
                 </div>
                 <div>
                     <h3>
-                        <span class="cv-training-year">YYYY - YYYY</span>
-                        -
-                        <span class="cv-training-title">Titulo formativo 1</span>
-                        -
-                        <span class="cv-training-institution">Insititución académica</span>
+                        <span class="cv-historial-date">YYYY - YYYY</span>
+                        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        <span class="cv-historial-title">Titulo formativo 1</span>
+                        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        <span class="cv-historial-institution">Insititución académica</span>
                     </h3>
                     <p>
                         Opcional: Conocimientos adquiridos. Tecnologías dominadas
@@ -155,24 +174,26 @@
             <div class="cv-card-info card-100">
                 <div class="card-icon">
                     <span>
-                        <i class="bi bi-archive-fill"></i>
+                        <i class="bi bi-book-half"></i>
                     </span>
                 </div>
                 <div>
                     <h3>
-                        <span class="cv-training-year">YYYY - YYYY</span>
-                        -
-                        <span class="cv-training-title">Titulo formativo 2</span>
-                        -
-                        <span class="cv-training-institution">Insititución académica</span>
+                        <span class="cv-historial-date">YYYY - YYYY</span>
+                        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        <span class="cv-historial-title">Titulo formativo 2</span>
+                        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        <span class="cv-historial-institution">Insititución académica</span>
                     </h3>
                     <p>
                         Opcional: Conocimientos adquiridos. Tecnologías dominadas
                     </p>
                 </div>
             </div>
+            <!--Repetir el bloque <div class="cv-card-info card-100"> para añadir nuevas formaciones-->
         </section>
         <hr>
+        <!--Redes sociales-->
         <section class="cv-social-media">
             <div>
                 <h2>En las redes sociales</h2>
