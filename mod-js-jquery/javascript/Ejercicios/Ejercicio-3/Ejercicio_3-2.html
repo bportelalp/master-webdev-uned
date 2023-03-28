@@ -1,39 +1,39 @@
 <!doctype html>
+<html lang="es-ES">
+
 <head>
-<meta charset="utf-8" />
-
-<SCRIPT TYPE="text/javascript" SRC="js/Ejercicio_3-2.js"> </SCRIPT>
-
-<title>Ejercicio 3-2: Calculos matemáticos</title>
-
- 
-
+	<meta charset="utf-8" />
+	<script type="text/javascript" src="js/Ejercicio_3-2.js"> </script>
+	<title>Ejercicio 3-2: Calculos matemáticos</title>
 </head>
 
 <body>
- <h2>Cálculo del factorial:</h2>
-        
-<form name="fomulario1">
-	Número: <input type="text" id="num1" size="20"><br>
-    El factorial es: <input type="text" id="resultado" size="20" readonly><br>
-<br>
-	<input type="Button" value="Calcula" onclick='document.getElementById("resultado").value = factorial(document.getElementById("num1").value)' >
-</form>
+	<h2>Cálculo del factorial:</h2>
+
+	<form name="fomulario1">
+		Número: <input type="text" id="num1" size="20"><br>
+		El factorial es: <input type="text" id="resultado" size="20" readonly><br>
+		<br>
+		<input type="button" value="calcula"
+			onclick='document.getElementById("resultado").value = factorial(document.getElementById("num1").value)'>
+	</form>
 
 
 
-<h2>Conversión de grados centigrados a grados Fahrenheit:</h2>
-        
-<form name="fomulario2">
+	<h2>Conversión de grados centigrados a grados Fahrenheit:</h2>
 
-	Introduce grados centigrados: <input type="text" id="idCentigrados" size="20"><br>
+	<form name="fomulario2">
 
-   Conversión a grados Fahrenheit: <input type="text" id="idFahrenheit" size="20" readonly><br>
+		Introduce grados centigrados: <input type="text" id="idCentigrados" size="20"><br>
 
-	<input type="Button" value="Pulsa para calcular grados Fahrenheit" onclick='document.getElementById("idFahrenheit").value = convertir(document.getElementById("idCentigrados").value)' >
-</form>
+		Conversión a grados Fahrenheit: <input type="text" id="idFahrenheit" size="20" readonly><br>
+
+		<input type="Button" value="Pulsa para calcular grados Fahrenheit"
+			onclick='document.getElementById("idFahrenheit").value = convertir(document.getElementById("idCentigrados").value)'>
+	</form>
 
 
 
 </body>
+
 </html>
