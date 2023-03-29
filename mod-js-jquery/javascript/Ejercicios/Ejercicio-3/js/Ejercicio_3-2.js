@@ -1,12 +1,15 @@
 
 /**
  * Calcula el factorial de un número
- * @param {string} number valor para el cálculo, como string
+ * @param {string} input valor para el cálculo, como string y que será sometido a comprobaciones
  * @returns el factorial de number
  */
-function factorial(number) {
-    number = parseInt(number);
-    if (isNaN(number)) {
+function factorial(input) {
+    input = input.replace(',','.')
+    let number = parseInt(input);
+    // parseInt, si es decimal, va a quitar los decimales, pero no se debe aceptar un 
+    // número decimal como entrada válida, por eso la segunda comprobación
+    if (isNaN(number) || input.includes('.')) {
         alert("El valor no es un entero!");
         return null;
     }
@@ -19,7 +22,7 @@ function factorial(number) {
 
 /**
  * Convierte un valor de temperatura en celsius a fahrenheit
- * @param {string} celsius Entrada de texto como grados ºC
+ * @param {string} celsius Entrada de texto como grados ºC. Será sometido a comprobaciones
  * @returns el valor en fahrenheit de la temperatura
  */
 function convertir(celsius) {
@@ -29,9 +32,6 @@ function convertir(celsius) {
         alert("El valor no es un entero o decimal!");
         return null;
     }
-    if (celsius === null)
-        return null;
-
     const fahrenheit = (celsius * 9 / 5.0) + 32;
     return fahrenheit;
 }

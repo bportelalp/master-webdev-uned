@@ -11,7 +11,7 @@
 // Contenedores para los datos
 let op1Str = ''; // sumando 1
 let op2Str = ''; // sumando 2
-let operator = ''; // operación
+let operator = ''; // símbolo operación
 let validValues = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'] // valores admitidos en los operandos
 let operators = ['+', '-', '=', 'C'] // operadores admitidos
 
@@ -35,7 +35,6 @@ function handleInput(input) {
 /**
  * Añade un nuevo número al operador que corresponda según el estado actual del cálculo
  * @param {string} number 
- * @returns 
  */
 function addNumber(number) {
     // Si el operando 1 tiene valor y el operador ya está definido, afecta al operando 2
@@ -44,7 +43,7 @@ function addNumber(number) {
             return;
         op2Str += number;
     }
-    else {
+    else { // Si no se cumple lo anterior, entonces aplica al primer operando
         if (number === '.' && op1Str.includes('.'))
             return;
         op1Str += number;
@@ -63,7 +62,6 @@ function handleOperation(operation) {
     else if (operation == '=') {
         // = ejecuta el cálculo
         calculate();
-
     }
     else if (op2Str !== "") {
         // Si ya está la operación lista, un nuevo operador equivale a un = y luego se aplica el operador
@@ -75,6 +73,7 @@ function handleOperation(operation) {
         op1Str = operation;
     }
     else {
+        // Cualquier otro caso, es la asignación del operador
         operator = operation;
     }
 }
@@ -137,7 +136,6 @@ function interceptKey(key) {
         // Se acepta enter como =
         handleInput('=');
     }
-    
 }
 
 // Escuchar evento de keyup en document para interceptar cualquier tecla
