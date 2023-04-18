@@ -7,7 +7,7 @@ const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 
  * @param {string} texto 
  */
 function escribe(texto) {
-	document.getElementById("cuadro_texto").innerHTML = texto;
+	document.getElementById("cuadro_texto").innerHTML = 'Hoy es <b>' + texto + '</b>';
 }
 
 /**
@@ -24,5 +24,5 @@ function ponfecha() {
 	const month = now.getMonth();
 	const year = now.getFullYear();
 	const dateFormatted = `${days[dayOfWeek]}, ${day} de ${months[month]} de ${year}`;
-	escribe('Hoy es <b>' + dateFormatted + '</b>');
+	escribe(dateFormatted);
 }
