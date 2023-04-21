@@ -25,7 +25,7 @@ window.onload = function () {
 
     // Numero de enlaces que NO enlazan a http://prueba
     const anchorsNotPrueba = Array.from(anchors).filter(a => a.attributes.href.textContent !== 'http://prueba')
-    appendResult('Numero de enlaces que no apuntan a http://prueba', anchorsNotPrueba.length);
+    appendResult('Numero de enlaces que NO apuntan a http://prueba', anchorsNotPrueba.length);
 
     // Número de enlaces del SEGUNDO párrafo  
     const paragraphs = document.getElementsByTagName('p');
