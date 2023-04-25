@@ -1,0 +1,15 @@
+Este diseño con Bootstrap se corresponde con uno de los mockups adjuntos y diseñados con penpot
+A continuacion unos breves comentarios
+
+-------- Seccion header ----------
+Card cuyo contenido usa flexbox.
+- Imagen limitado a maximo 260px.
+- Al usar flexbox, el lado de la info se adapta al espacio restante "flex-fill"
+
+-------- Seccion Experiencia ------
+Cada carta usa en el titulo flexbox con "justify-content-between" para que la fecha aparezca 
+en el lado opuesto del titulo.
+
+-------- Idiomas ---------
+La capacidad se usa con progress bar donde el width es el dominio de ese idioma,
+de 0 a 100%.
