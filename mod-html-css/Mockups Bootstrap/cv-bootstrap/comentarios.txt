@@ -1,4 +1,4 @@
-Este diseño con Bootstrap se corresponde con uno de los mockups adjuntos y diseñados con penpot
+Este diseño con Bootstrap se corresponde con el mockup adjunto "Curriculum vitae Bootstrap.pdf" y diseñados con penpot
 A continuacion unos breves comentarios
 
 -------- Seccion header ----------
