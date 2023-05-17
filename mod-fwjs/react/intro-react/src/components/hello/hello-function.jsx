@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 const HelloFunction = (props) => {
 
@@ -6,6 +6,9 @@ const HelloFunction = (props) => {
         nombre: 'Alguien',
         apellido: 'Apellido'
     }
+
+    /** Conservar estados */
+    const [count, setCount] = useState(0);
 
     return (
         <>
@@ -16,6 +19,10 @@ const HelloFunction = (props) => {
         <div>
             Hola estado: {state.nombre}, {state.apellido}
         </div>
+        <p>
+            Has clickado {count} veces
+        </p>
+        <button onClick={() => setCount(count + 1)}>Click aquí</button>
     </>
     )
 }
