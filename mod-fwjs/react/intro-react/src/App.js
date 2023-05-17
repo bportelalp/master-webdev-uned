@@ -1,16 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import HelloClass from './components/hello/hello-class';
+import HelloFunction from './components/hello/hello-function';
 
-function Hola(props) {
-  return (
-    <div>
-      Hola {props.nombre}, ¿Qué tal?
-    </div>
-  );
-}
 
 function App() {
   const nombre = "Bruno";
+  const apellido = "Portela";
   return (
     <div className="App">
       <header className="App-header">
@@ -26,8 +22,8 @@ function App() {
         >
           Learn React
         </a>
-        <Hola nombre={nombre} />
-        <Hola nombre="Bruno" />
+        <HelloClass nombre={nombre} apellido={apellido}/>
+        <HelloFunction nombre={nombre} apellido={apellido}/>
       </header>
     </div>
   );
