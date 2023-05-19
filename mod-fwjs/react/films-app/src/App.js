@@ -4,7 +4,7 @@ import NavigationBar from './components/navbar/navigationbar';
 
 function App() {
   return (
-    <div class="App">
+    <div className="App">
       <NavigationBar/>
       <Home></Home>
     </div>
