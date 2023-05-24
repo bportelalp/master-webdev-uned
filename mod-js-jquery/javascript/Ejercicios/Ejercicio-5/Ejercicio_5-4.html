@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+      <meta charset="utf-8">
+      <title>Diapositivas y vídeo sincronizados</title>
+
+      <script type="text/javascript" src="js/Ejercicio_5-4.js"></script>
+
+      <style type="text/css">
+            /*Borde redordeado para la diapositiva  */
+            #diapo {
+                  border-radius: 15px;
+                  border: 1px solid #000000;
+            }
+      </style>
+
+
+</head>
+
+<body style='background-color: #DDDDDD;'>
+
+      <div style="text-align:center">
+            <h3>Video</h3>
+
+            <!-- Decidir qué evento es el adecuado para detectar un cambio en el instante de reproducción
+      del video. Cuando se dispare este evento es cuando hay que actualizar la diapositiva relacionada
+      con el punto de reproducción y escribir el nuevo valor del instante de reproducción. -->
+
+            <video id="player" controls width="720" poster="img/ImagenInicial.png" loop>
+
+                  <source src="img/trailer.ogg" type="video/ogg" />
+                  <source src="img/trailer.mp4" type="video/mp4" />
+                  <source src="img/trailer.webm" type="video/webm" />
+                  Tu navegador no entiende la etiqueta <VIDEO> de HTML5. Deberías actualizarlo.
+
+                  </video>
+
+      </div>
+
+      <!-- El siguiente trozo de código muestra cuatro botones que interáctuan con el video cuando
+     se hace click en cualquiera de ellos para:
+		- Iniciar o parar la reproduzción
+        - Disminuir el tamaño del video a un ancho de 480 pixels
+        - Aumentar el tamaño del video a un ancho de 840 pixels
+        - Dejar el video en su tamaño original de un ancho de 720 pixels
+        
+        Ayuda: http://www.w3schools.com/html/tryit.asp?filename=tryhtml5_video_js_prop
+-->
+
+      <div style="text-align:center">
+            <button id="pause-resume">Reproducir/Pausa</button>
+            Tamaño:
+            <button id="size-small">Pequeño</button>
+            <button id="size-large">Grande</button>
+            <button id="size-normal">Normal</button>
+      </div>
+
+
+      <!-- Mensaje con el instante de reproducción -->
+      <div style="text-align:center">
+            <h2>Instante de reproducción: <span id="tiempo">X</span></h2>
+      </div>
+
+      <!-- Imagen sincronizada con el video: su contenido depende del instante de reproducción del video -->
+      <div style="text-align:center">
+            <h3>Diapositiva relacionada con el punto de reproducción</h3>
+            <img id="diapo" src="img/Imagen01_000.jpg" />
+      </div>
+
+
+</body>
+
+</html>
