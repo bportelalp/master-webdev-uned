@@ -40,6 +40,7 @@ function changeSizeHandler(sizePixels) {
  */
 function timeUpdatedHandler() {
     spanTime.innerHTML = video.currentTime;
+    console.log(spanTime.innerHTML);
     displayImage();
 }
 
@@ -49,19 +50,20 @@ function timeUpdatedHandler() {
 function displayImage() {
     const second = video.currentTime;
     let indexSelected = undefined;
-    // Buscar el intervalo en el que cae el vídeo
-    for (let idx = 0; idx <= carouselTiming.length - 1; idx++) {
+    // Buscar el intervalo en el que cae el vídeo.
+    for (let idx = 0; idx < carouselTiming.length; idx++) {
         const startTime = carouselTiming[idx];
         const endTime = carouselTiming[idx + 1];
-        if (second >= startTime && second < endTime) {
+        /**
+         * segundo tiene que ser mayor que el tiempo de inicio y
+         * (ser menor que el tiempo final del intervalo o este sea indefinido (el resto del video, cuando (idx +1) sale del
+         * rango del array))
+         */
+        if (second >= startTime && (second < endTime ||endTime === undefined)) {
             indexSelected = idx;
             break;
         }
     }
-    // Cuando no encuentra, es que se escapa de escala asi que es coger el último
-    if (indexSelected == undefined)
-        indexSelected = carouselTiming.length - 1;
-
     const imgName = `img/${carouselImg[indexSelected]}`;
     if (carousel.src !== imgName)
         carousel.src = imgName;
