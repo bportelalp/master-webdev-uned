@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 6-2: Validar formulario</title>
+
+    <link rel="stylesheet" type="text/css" href="css/Ejercicio_6-2.css" media="screen" />
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/Ejercicio_6-2.js"></script>
+
+</head>
+
+<body>
+
+    <form id="pago">
+        <fieldset>
+            <legend>&nbsp; Datos del comprador&nbsp; &nbsp; </legend>
+            <ol>
+                <li>
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" name="nombre" placeholder="Escribe tu nombre completo">
+                </li>
+                <li>
+                    <label for="dni">DNI</label>
+                    <input id="dni" name="dni" placeholder="Ej. 12345678Z">
+                </li>
+                <li>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" placeholder="Ej. pablo@scc.uned.es">
+                </li>
+                <li>
+                    <label for="telefono">Tel&eacute;fono</label>
+                    <input id="telefono" name="telefono" placeholder="Ej. +343987159">
+                </li>
+
+            </ol>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>&nbsp; Datos de tarjeta de cr&eacute;dito o d&eacute;bito &nbsp; &nbsp; </legend>
+            <ol>
+                <li>
+                    <label for="numtarjeta">N&uacute;mero</label>
+                    <input id="numtarjeta" name="numtarjeta" placeholder="Ej. 5555-4444-3333-2222">
+                </li>
+                <li>
+                    <label for="fechas">Caduca</label>
+                    <input id="fecha" name="fechas" placeholder="Formato MM/AAAA Ej. 06/2019">
+                </li>
+            </ol>
+        </fieldset>
+        <br>
+        <fieldset>
+            <div style="text-align: center;">
+                <button type="Button" onClick="">Validar datos</button>
+            </div>
+            <div id="mensaje"></div>
+        </fieldset>
+    </form>
+
+</body>
+
+</html>
