@@ -1,7 +1,7 @@
 import React from "react";
 import filmsJson from '../../assets/movies.json'
 import './home.css'
-import FilmCard from "./filmCard";
+import FilmList from "../films/filmList/filmList";
 
 const Home = () => {
     const films = filmsJson.slice(0, 5);
@@ -10,13 +10,7 @@ const Home = () => {
         <>
             <div className="home">
                 <h2>Películas recientes</h2>
-                <div className="peliculas">
-                    {films.map(film => {
-                        return (
-                            <FilmCard key={film.id} film={film} />
-                        )
-                    })}
-                </div>
+                <FilmList films={films}/>
             </div>
         </>
     );
