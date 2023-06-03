@@ -7,7 +7,7 @@ const lang = 'language=es-ES';
 const getPopularMovies = async () => {
     try {
         console.log(process.env.REACT_APP_API_KEY);
-        return await axios.get(`${URI}now_playing?${process.env.API_KEY}&${lang}`)
+        return await axios.get(`${URI}now_playing?${process.env.REACT_APP_API_KEY}&${lang}`)
             .then(resp => resp.data.results);
     } catch (error) {
         console.log(error);
