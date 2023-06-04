@@ -1,5 +1,4 @@
 import React from "react";
-import filmsJson from '../../../assets/movies.json'
 import FilmList from "../filmList/filmList";
 import * as api from '../../../services/filmService'
 import { useState, useEffect } from "react";
@@ -24,6 +23,5 @@ const Films = () => {
         </>
     )
 }
-
 
 export default Films;
