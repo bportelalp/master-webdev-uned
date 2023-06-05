@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
           <Routes>
             <Route path='/' element={<CountryIndexPage/>} />
-            <Route path='/country/:officialName' element={<CountryDetailPage/>}/>
+            <Route path='/country/:commonName' element={<CountryDetailPage/>}/>
             <Route path="*" element={<CountryIndexPage/>}/>
           </Routes>
         </BrowserRouter>
