@@ -1,7 +1,4 @@
-import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
+import { IonApp, IonContent, IonHeader, IonTitle, IonToolbar, setupIonicReact } from '@ionic/react';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -21,21 +18,22 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import BmcForm from './components/BmiForm';
 
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
-      </IonRouterOutlet>
-    </IonReactRouter>
+    <IonHeader>
+      <IonToolbar color="primary">
+        <IonTitle>
+          Calculadora de IMC con componentes ionic
+        </IonTitle>
+      </IonToolbar>
+    </IonHeader>
+    <IonContent className='ion-padding'>
+      <BmcForm/>
+    </IonContent>
   </IonApp>
 );
 
