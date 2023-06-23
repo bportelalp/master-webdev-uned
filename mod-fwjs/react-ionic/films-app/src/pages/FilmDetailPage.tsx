@@ -3,11 +3,18 @@ import React from "react";
 import { useParams } from "react-router";
 import filmsJson from "../../assets/movies.json"
 
+/**
+ * Representa el objeto de parámetros que recibe esta página por la URL
+ */
 interface FilmDetailParams {
   idFilm: string,
   titleFilm: string
 }
 
+/**
+ * Componente detalle de película
+ * @returns 
+ */
 const FilmDetailPage: React.FC = () => {
   const { idFilm, titleFilm } = useParams<FilmDetailParams>();
   const film = filmsJson.filter(f => f.id == +idFilm)[0];

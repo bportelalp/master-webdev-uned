@@ -1,6 +1,10 @@
 import { IonButtons, IonHeader, IonMenuButton, IonTitle, IonToolbar } from "@ionic/react";
 import React from "react"
 
+/**
+ * Barra de navegación
+ * @returns 
+ */
 const NavigationBar: React.FC = () => {
   return (
     <IonHeader>
