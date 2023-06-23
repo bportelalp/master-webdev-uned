@@ -1,4 +1,4 @@
-# Films app
+# Films app con React
 
 Aplicación correspondiente a la práctica 1 de react.
 

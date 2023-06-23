@@ -1,7 +1,10 @@
 import { IonContent, IonHeader, IonIcon, IonItem, IonMenu, IonTitle, IonToolbar } from "@ionic/react";
 import React from "react";
 
-
+/**
+ * Menú con enlaces a las diferentes páginas
+ * @returns 
+ */
 const MainMenu: React.FC = () => {
 
   return (

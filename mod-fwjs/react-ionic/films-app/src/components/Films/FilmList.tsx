@@ -3,6 +3,9 @@ import { Film } from "../../interfaces/Film";
 import FilmCard from "./FilmCard";
 import './FilmList.css'
 
+/**
+ * Interfaz para el objeto props que recibe FilmList
+ */
 interface FilmListProps {
   films: Film[]
 }
