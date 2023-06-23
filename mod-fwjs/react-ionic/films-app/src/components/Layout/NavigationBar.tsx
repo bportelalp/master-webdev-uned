@@ -3,14 +3,14 @@ import React from "react"
 
 const NavigationBar: React.FC = () => {
   return (
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Films app</IonTitle>
-          <IonButtons slot="start">
-            <IonMenuButton auto-hide="false"></IonMenuButton>
-          </IonButtons>
-        </IonToolbar>
-      </IonHeader>
+    <IonHeader>
+      <IonToolbar>
+        <IonTitle>Films app</IonTitle>
+        <IonButtons slot="start">
+          <IonMenuButton auto-hide="false"></IonMenuButton>
+        </IonButtons>
+      </IonToolbar>
+    </IonHeader>
   );
 }
 
