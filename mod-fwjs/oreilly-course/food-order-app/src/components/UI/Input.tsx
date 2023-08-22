@@ -1,3 +1,4 @@
+import React from 'react';
 import css from './Input.module.css'
 
 interface InputProps extends React.PropsWithChildren {
@@ -5,13 +6,13 @@ interface InputProps extends React.PropsWithChildren {
   input:  {id: string} | any
 }
 
-const Input: React.FC<InputProps> = (props) => {
+const Input=  React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   return (
     <div className={css.input}>
       <label htmlFor={props.input.id}>{props.label}</label>
-      <input {...props.input}/>
+      <input ref={ref} {...props.input}/>
     </div>
   )
-}
+})
 
 export default Input;
