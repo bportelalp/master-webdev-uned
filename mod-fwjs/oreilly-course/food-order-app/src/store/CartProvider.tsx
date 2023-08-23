@@ -1,34 +1,60 @@
 import { useReducer } from "react";
-import { MealsCart } from "../interfaces/MealsCart";
 import CartContext from "./cartContext";
+import { MealsCart } from "../interfaces/MealsCart";
+import { Meal } from "../interfaces/Meal";
 import { MealOrder } from "../interfaces/MealOrder";
 
 const defaultCartState: MealsCart = {
-  items: [],
+  mealOrders: [],
   totalAmount: 0,
-  addItem: (item) => { },
-  removeItem: (id) => { }
+  addItem: (item: any) => { },
+  removeItem: (id: any) => { }
 };
 
-const cartReducer = (state: MealsCart, action: any): MealsCart => {
+interface MealEditionAction {
+  type: string,
+  item?: MealOrder,
+  id?: string
+}
+
+const cartReducer = (state: MealsCart, action: MealEditionAction): MealsCart => {
   if (action.type === 'ADD') {
-    const updatedItems = state.items.concat(action.item)
-    const newTotalAmount = state.totalAmount + action.item.price * action.item.amount;
+    const updatedItems = [...state.mealOrders]
+    let equivalent = state.mealOrders.find(i => i.id === action.item!.id);
+    if (equivalent) {
+      const indexEquivalent = state.mealOrders.indexOf(equivalent);
+      equivalent = { ...equivalent! };
+      equivalent.amount += action.item!.amount;
+      updatedItems[indexEquivalent] = equivalent;
+    }
+    else
+      updatedItems.push(action.item!)
+
     return {
-      items: updatedItems,
-      totalAmount: newTotalAmount,
-      addItem: (item) => { },
-      removeItem: (id) => { }
+      mealOrders: updatedItems,
+      totalAmount: updatedItems.reduce((sum, item) => sum + (item.amount * item.price), 0),
+
+      addItem: () => { },
+      removeItem: () => { }
     };
   }
   else if (action.type === 'REMOVE') {
-    const updatedItems = state.items.concat(action.item)
-    const newTotalAmount = state.totalAmount - action.item.price * action.item.amount;
+    const updatedItems = [...state.mealOrders]
+    let equivalent = state.mealOrders.find(i => i.id === action.item!.id);
+    if (equivalent) {
+      const indexEquivalent = state.mealOrders.indexOf(equivalent);
+      equivalent = { ...equivalent! };
+      equivalent.amount -= action.item!.amount;
+      if (equivalent.amount <= 0)
+        delete updatedItems[indexEquivalent]
+      else
+        updatedItems[indexEquivalent] = equivalent;
+    }
     return {
-      items: updatedItems,
-      totalAmount: newTotalAmount,
-      addItem: (item) => { },
-      removeItem: (id) => { }
+      mealOrders: updatedItems,
+      totalAmount: updatedItems.reduce((sum, item) => sum + (item.amount * item.price), 0),
+      addItem: () => { },
+      removeItem: () => { }
     };
   }
   return defaultCartState
@@ -40,16 +66,20 @@ const CartProvider: React.FC<React.PropsWithChildren> = (props) => {
     defaultCartState
   );
 
-  const addItemToCartHandler = (item: MealOrder) => {
-    dispatchCartAction({ type: 'ADD', item: item });
+  const addItemToCartHandler = (item: Meal, amount: number) => {
+    const itemOrder = (item as MealOrder);
+    itemOrder.amount = amount
+    dispatchCartAction({ type: 'ADD', item: {...itemOrder} });
   };
 
-  const removeItemFromCartHandler = (id: string) => {
-    dispatchCartAction({ type: 'REMOVE', id: id });
+  const removeItemFromCartHandler = (item: Meal, amount: number) => {
+    const itemOrder = (item as MealOrder);
+    itemOrder.amount = amount
+    dispatchCartAction({ type: 'REMOVE', item: itemOrder });
   };
 
   const cartContext: MealsCart = {
-    items: cartState.items,
+    mealOrders: cartState.mealOrders,
     totalAmount: cartState.totalAmount,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,

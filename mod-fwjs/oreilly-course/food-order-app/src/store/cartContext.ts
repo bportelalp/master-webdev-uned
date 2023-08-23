@@ -1,11 +1,11 @@
 import React from "react";
-import { MealsCart} from "../interfaces/MealsCart";
+import { MealsCart } from "../interfaces/MealsCart";
 
 const CartContext = React.createContext<MealsCart>({
-  items: [],
+  mealOrders: [],
   totalAmount: 0,
-  addItem: (item, amount) => {},
-  removeItem: (id) => {}
+  addItem: () => {},
+  removeItem: () => {}
 })
 
 

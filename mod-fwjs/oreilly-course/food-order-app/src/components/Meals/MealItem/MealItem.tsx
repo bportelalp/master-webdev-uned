@@ -21,7 +21,7 @@ const MealItem: React.FC<MealItemProps> = (props) => {
         <div className={css.price}>{price}</div>
       </div>
       <div>
-        <MealItemForm onAdd={(amount) => ctx.addItem(props.meal, amount)}/>
+        <MealItemForm onAdd={(amount) => ctx.addItem({...props.meal}, amount)}/>
       </div>
     </li>
   )
