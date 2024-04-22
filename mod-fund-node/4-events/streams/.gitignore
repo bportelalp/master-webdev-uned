@@ -1,2 +1,2 @@
-file.txt
-file.txt.gz
+*.txt
+*.txt.gz
