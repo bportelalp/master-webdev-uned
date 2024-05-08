@@ -1,0 +1,4 @@
+*.txt
+*.txt.gz
+
+!file-system/hola.txt
