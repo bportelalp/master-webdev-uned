@@ -1,0 +1,4 @@
+Accede a la ruta /static-express/document-sample.txt y el servidor
+express devolverá este archivo como estático.
+
+Esto lo ha hecho el middleware de express
