@@ -1,0 +1,28 @@
+version: '3'
+name: mongdb
+volumes:
+  datadb:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: $userprofile/docker-volumes/db/mongodb/data/db
+  dataconfig:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: $userprofile/docker-volumes/db/mongodb/data
+services:
+  dbmasternode:
+    image: mongo:7.0.5
+    env_file:
+      - .env
+    ports:
+      - 27018:27017 
+    volumes:
+      - datadb:/data/db
+      - dataconfig:/data/configdb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=$ROOT_USER
+      - MONGO_INITDB_ROOT_PASSWORD=$ROOT_PASSWORD
