@@ -115,3 +115,6 @@ entrega-uned/
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Working data
+sample_mflix/
