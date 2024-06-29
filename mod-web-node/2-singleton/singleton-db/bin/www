@@ -5,8 +5,9 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('singleton-bd:server');
+var debug = require('debug')('singleton-db:server');
 var http = require('http');
+const client = require("../services/conexion-db");
 
 /**
  * Get port from environment and store in Express.
@@ -28,6 +29,7 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+server.on("close", () => debug("Server closed ....."));
 
 /**
  * Normalize a port into a number, string, or false.
@@ -88,3 +90,13 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+['SIGINT', 'SIGTERM', 'SIGQUIT']
+  .forEach(signal => process.on(signal, async () => {   // (2)
+
+    await client.close();                              // (3)
+
+    server.close(function () {                          // (4)
+      process.exit(0);
+    })
+
+  }));
