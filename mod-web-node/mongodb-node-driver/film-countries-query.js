@@ -12,6 +12,10 @@ async function run() {
     const distinctCountries = (await moviesCollection.distinct("countries")).length
     console.log("Hay películas de", distinctCountries, "países distintos");
 
+    
+    const totalDocuments = await moviesCollection.countDocuments()
+    console.log("Hay ", totalDocuments, "peliculas en la colección");
+
     const moviesbefore2000 = (await moviesCollection.countDocuments({year: {$lt: 2000}}))
     console.log("Hay", moviesbefore2000, "películas de antes de 2000");
     
