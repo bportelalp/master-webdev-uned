@@ -12,7 +12,7 @@ const loadDb = async function run() {
   try {
     await client.connect();
     debug("Conectado a %s", uri);
-
+    
     await client.db("admin").command({ ping: 1 });
     debug("Ping adminDb OK");
     return;
