@@ -1,11 +1,11 @@
 const services = require('../../services');
 const handlers = require('../../controllers/handlers');
-const usersHandler = handlers('albums');
+const albumsHandler = handlers('albums');
 
 module.exports = (app, ruta) => {
-  app.get(ruta, usersHandler(services).get);
-  app.get(`${ruta}/:id`, usersHandler(services).getId);
-  app.post(ruta, usersHandler(services).post);
-  app.put(`${ruta}/:id`, usersHandler(services).put);
-  app.delete(`${ruta}/:id`, usersHandler(services).delete);
+  app.get(ruta, albumsHandler(services).get);
+  app.get(`${ruta}/:id`, albumsHandler(services).getId);
+  app.post(ruta, albumsHandler(services).post);
+  app.put(`${ruta}/:id`, albumsHandler(services).put);
+  app.delete(`${ruta}/:id`, albumsHandler(services).delete);
 }
