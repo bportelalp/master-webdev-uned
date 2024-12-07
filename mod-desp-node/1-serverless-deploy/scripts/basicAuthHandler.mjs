@@ -29,10 +29,8 @@ export const handler = async (event) => {
           user = result.Items[0]
         console.log(`Seek user ${username} on DynamoDB: ${JSON.stringify(user)}`);
         if (user && user.passwordHash === passwordHash) {
-            // return generatePolicy(username, 'Allow', event.methodArn);
             return generateResult(true);
         } else {
-            // return generatePolicy('user', 'Deny', event.methodArn);
             return generateResult(false);
         }
     } catch (error) {
