@@ -16,7 +16,7 @@ router.get("/cumulative", (req, res, next) => {
 });
 
 router.get("/movies", async (req, res, next) => {
-  const mflix = client.db("mflix");
+  const mflix = client.db("sample_mflix");
   const query = { title: "Traffic in Souls" };
   const movie = await mflix.collection("movies").findOne(query);
   res.send(movie);
