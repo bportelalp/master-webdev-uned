@@ -1,10 +1,11 @@
 const client = require('./conexion-db');
+let debug = require("debug")("singleton-db:repo-db");
 const db = client.db('sample_mflix');
 
 async function executeQueryEncapsulate(queryFunc) {
     return new Promise(async (resolve, reject) => {
         const result = await queryFunc
-        console.log(result);
+        debug('Executed query on: ', db.databaseName);
         resolve({ data: result })
     })
 }
