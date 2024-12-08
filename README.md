@@ -22,3 +22,21 @@ Centrado fundamentalmente en los principios UX-UI. Se recoje una copia de los tr
 ### Frameworks JavaScript para Front-end y dispositivos móviles
 
 Se trabaja con React, React Native e Ionic
+
+## Módulos 2024
+
+### Fundamentos de Programación en Node.js
+
+Introducción a la programación con Node.js
+
+### Arquitecturas de desarrollo web con Node.js
+
+Web con Node.js con Express y MongoDB.
+
+### Despliegue de aplicaciones Node.js
+
+Despliegue de aplicaciones node.js en AWS.
+
+### Trabajo Fin de Máster
+
+TODO.
