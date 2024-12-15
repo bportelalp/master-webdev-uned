@@ -1,11 +1,11 @@
-require("dotenv").config();
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv"
 import debugLib from "debug"
 
 dotenv.config();
-const debug = debugLib("db:mongodb-connection");
+const debug = debugLib("api:mongodb-connection");
 
+debug('Instanciado conexion');
 const uri = process.env.MONGO_DB;
 const client = new MongoClient(uri, { compressors: "zlib" });
 
