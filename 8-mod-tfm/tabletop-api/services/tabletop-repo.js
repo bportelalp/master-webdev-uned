@@ -33,14 +33,11 @@ const getById = async (id) => {
   throw err;
 }
 
-const create = async (game, skipEquality = false) => {
+const createGame = async (game, skipEquality = false) => {
   // Existe similar por nombre y autor
   const collection = db.collection('games');
   if (!skipEquality) {
-    const equivalent = await collection.findOne({
-      title: { $regex: new RegExp(`^${game.title}$`, 'i') },
-      author: { $regex: new RegExp(`^${game.author}$`, 'i') }
-    });
+    const equivalent = await _findEquivalentTitleAuthor(game.title, game.authors[0])
 
     if (equivalent) {
       throw new ApiError(409, "Ya hay un juego con un título y autor similares. Puedes forzar la escritura con el parametro skipEquality=true", { equivalent });
@@ -52,7 +49,7 @@ const create = async (game, skipEquality = false) => {
   }
 }
 
-const update = async (id, game) => {
+const updateGame = async (id, game) => {
 
   const equivalent = db.collection('games').findOne({
     _id: _validateAndGetId(id)
@@ -63,7 +60,24 @@ const update = async (id, game) => {
 
   const result = await db.collection('games').replaceOne(
     {_id: ObjectId.createFromHexString(id)},
-    game
+    game,
+    imageUrl = equivalent.imageUrl
+  );
+  return await getById(id);
+}
+
+const updateGameImage = async (id, imageUrl) => {
+
+  const equivalent = db.collection('games').findOne({
+    _id: _validateAndGetId(id)
+  })
+  if(!equivalent){
+    throw new ApiError(404, "El juego buscado no existe");
+  }
+
+  const result = await db.collection('games').updateOne(
+    {_id: ObjectId.createFromHexString(id)},
+    {$set: {imageUrl: imageUrl}}
   );
   return await getById(id);
 }
@@ -85,10 +99,19 @@ function _validateAndGetId(id){
   return ObjectId.createFromHexString(id);
 }
 
+async function _findEquivalentTitleAuthor(title, author){
+  const equivalent = await db.collection('games').findOne({
+    title: { $regex: title, $options: 'i' },
+    authors: { $elemMatch: { $regex: author, $options: 'i' } }
+  });
+  return equivalent;
+}
+
 export default {
   getByFilter,
   getById,
-  create,
-  update,
+  createGame,
+  updateGame,
+  updateGameImage,
   deleteById
 }
