@@ -7,6 +7,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
+import cors from 'cors';
 
 import indexRouter from './routes/index.js';
 import usersRouter from './routes/users.js';
@@ -19,6 +20,7 @@ const debug = debugLib("tabletop-api:app")
 
 var app = express();
 
+app.use(cors());
 app.use(logger('dev'));
 app.use(json());
 app.use(urlencoded({ extended: false }));
