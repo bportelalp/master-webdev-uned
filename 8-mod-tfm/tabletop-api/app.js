@@ -25,9 +25,9 @@ app.use(urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(staticFiles(path.join(path.dirname(__filename), 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/games', gamesRouter);
+app.use('/api', indexRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/games', gamesRouter);
 debug("Rutas configuradas");
 
 app.use(errorHandler)
