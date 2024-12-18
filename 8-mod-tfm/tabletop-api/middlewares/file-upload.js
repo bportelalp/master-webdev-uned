@@ -4,7 +4,7 @@ import { ApiError } from '../helpers/ApiError.js';
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, process.env.FOLDER_IMAGES); //
+    cb(null, process.env.FOLDER_IMAGES_TEMP); //
   },
   filename: (req, file, cb) => {
     const ext = path.extname(file.originalname);

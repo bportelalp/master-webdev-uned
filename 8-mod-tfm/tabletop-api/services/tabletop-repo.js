@@ -51,17 +51,17 @@ const createGame = async (game, skipEquality = false) => {
 
 const updateGame = async (id, game) => {
 
-  const equivalent = db.collection('games').findOne({
+  const equivalent = await db.collection('games').findOne({
     _id: _validateAndGetId(id)
   })
   if(!equivalent){
     throw new ApiError(404, "El juego buscado no existe");
   }
 
+  game.imageUrl = equivalent.imageUrl;
   const result = await db.collection('games').replaceOne(
     {_id: ObjectId.createFromHexString(id)},
-    game,
-    imageUrl = equivalent.imageUrl
+    game
   );
   return await getById(id);
 }

@@ -3,6 +3,9 @@ import repo from '../services/tabletop-repo.js'
 import debugLib from 'debug';
 import upload from '../middlewares/file-upload.js';
 import { ApiError } from '../helpers/ApiError.js';
+import path from 'path';
+import fs from 'fs';
+import { fileURLToPath } from 'url';
 
 const debug = debugLib("api:games")
 
@@ -43,17 +46,33 @@ router.put('/:id', async (req, res, next) => {
     next(error);
   }
 })
+
+
 router.put('/:id/image', upload.single('image'), async (req, res, next) => {
   try {
     const { id } = req.params;
     let url = undefined;
     if (req.file) {
-      url = `/${process.env.FOLDER_IMAGES}/${req.file.filename}`;
+      url = `/${process.env.FOLDER_IMAGES_TEMP}/${req.file.filename}`;
     }
 
     if (url) {
-      debug('Imagen recibida', url);
-      await repo.updateGameImage(id, url)
+      debug('Imagen recibida en', url);
+
+      const game = await repo.getById(id);
+      if (!game)
+        throw new ApiError(404, 'No se encuentra el juego');
+
+
+      const fileExt = path.extname(req.file.originalname);
+
+      const __filename = fileURLToPath(import.meta.url);
+      const __dirname = path.dirname(__filename);
+      const rutaUrl = `/${process.env.FOLDER_IMAGES}/${id}${fileExt}`;
+      const rutaFisica = path.join(__dirname, `..${rutaUrl}`);
+      fs.renameSync(path.join(req.file.destination, req.file.filename), rutaFisica); // Renombramos el archivo
+
+      await repo.updateGameImage(id, rutaUrl);
       const updated = await repo.getById(id);
       res.send(updated);
     }

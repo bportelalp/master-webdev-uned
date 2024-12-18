@@ -28,12 +28,28 @@ const getGame = (gameId) => {
     }
 }
 
+const updateGame = (gameId, game) => {
+    const uri = `${URI}/api/games/${gameId}`;
+    if(game._id)
+        delete game._id;
+
+    try {
+        const promise = axios.put(uri, game)
+            .then(resp => resp.data);
+        return promise;
+    } catch (error) {
+        console.log('Error on', uri, error);
+        throw new Error(error.message);
+    }
+}
+
 const getImgUri = (relativePath = "") => `${URI}${relativePath}`;
 
 const instance = {
     getGames,
     getImgUri,
-    getGame
+    getGame,
+    updateGame
 }
 
 export default instance
