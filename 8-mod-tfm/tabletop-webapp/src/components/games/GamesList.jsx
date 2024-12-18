@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Card, CardContent, Typography, Grid, Pagination, Box } from '@mui/material';
+import {Grid, Pagination, Box } from '@mui/material';
 import api from '../../services/tabletop-client.js';
+import GameCard from './GameCard.jsx';
 const GamesList = () => {
     // Número de elementos por página
-    const itemsPerPage = 2;
+    const itemsPerPage = 20;
     const [currentPage, setCurrentPage] = useState(1);
     const [currentData, setCurrentData] = useState([]);
 
@@ -16,7 +17,9 @@ const GamesList = () => {
 
     let paginatedData = [];
     let totalPages = 0;
+
     const handlePageChange = (_, page) => setCurrentPage(page);
+
     if (currentData) {
         // Calcular la paginación
         totalPages = Math.ceil(currentData.length / itemsPerPage);
@@ -28,20 +31,9 @@ const GamesList = () => {
     }
 
     return (
-        <Box sx={{ padding: 2 }}>
+        <Box sx={{ padding: 2, width: '100%'}}>
             <Grid container spacing={2}>
-                {paginatedData.map((item, index) => {
-                    return (<Grid item xs={12} sm={6} md={4} key={index}>
-                        <Card>
-                            <CardContent>
-                                <Typography variant="h6">{item.title}</Typography>
-                                {/* <Typography variant="body2" color="text.secondary">
-                                    {item.authors[0]}
-                                </Typography> */}
-                            </CardContent>
-                        </Card>
-                    </Grid>)
-                })}
+                {paginatedData.map((item, index) => (<GameCard game={item} key={index} />))}
             </Grid>
 
             <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: 3 }}>
