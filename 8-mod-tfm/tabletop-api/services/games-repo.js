@@ -54,13 +54,13 @@ const updateGame = async (id, game) => {
   const equivalent = await db.collection('games').findOne({
     _id: _validateAndGetId(id)
   })
-  if(!equivalent){
+  if (!equivalent) {
     throw new ApiError(404, "El juego buscado no existe");
   }
 
   game.imageUrl = equivalent.imageUrl;
   const result = await db.collection('games').replaceOne(
-    {_id: ObjectId.createFromHexString(id)},
+    { _id: ObjectId.createFromHexString(id) },
     game
   );
   return await getById(id);
@@ -71,13 +71,13 @@ const updateGameImage = async (id, imageUrl) => {
   const equivalent = db.collection('games').findOne({
     _id: _validateAndGetId(id)
   })
-  if(!equivalent){
+  if (!equivalent) {
     throw new ApiError(404, "El juego buscado no existe");
   }
 
   const result = await db.collection('games').updateOne(
-    {_id: ObjectId.createFromHexString(id)},
-    {$set: {imageUrl: imageUrl}}
+    { _id: ObjectId.createFromHexString(id) },
+    { $set: { imageUrl: imageUrl } }
   );
   return await getById(id);
 }
@@ -86,20 +86,20 @@ const deleteById = async (id) => {
   const result = await db.collection('games').deleteOne({
     _id: _validateAndGetId(id)
   })
-  if(result.deletedCount > 0)
+  if (result.deletedCount > 0)
     return;
 
-  throw new ApiError(404, "No se encontró un elemento para borrar con ese id", {searchId: id});
+  throw new ApiError(404, "No se encontró un elemento para borrar con ese id", { searchId: id });
 }
 
-function _validateAndGetId(id){
+function _validateAndGetId(id) {
   if (!ObjectId.isValid(id)) {
     throw new ApiError(400, "El formato de id no es válido");
   }
   return ObjectId.createFromHexString(id);
 }
 
-async function _findEquivalentTitleAuthor(title, author){
+async function _findEquivalentTitleAuthor(title, author) {
   const equivalent = await db.collection('games').findOne({
     title: { $regex: title, $options: 'i' },
     authors: { $elemMatch: { $regex: author, $options: 'i' } }
