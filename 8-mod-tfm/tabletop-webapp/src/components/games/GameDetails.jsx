@@ -80,7 +80,7 @@ const GameDetails = ({ gameId }) => {
                             src={api.getImgUri(game.imageUrl)}
                             alt={game.title || 'Imagen del juego'}
                             style={{
-                                maxWidth: '100%',
+                                maxWidth: '500px',
                                 maxHeight: '100%',
                                 objectFit: 'contain', // Ajusta la imagen al tamaño disponible sin recortarla
                             }}

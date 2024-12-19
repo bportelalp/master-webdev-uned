@@ -1,6 +1,4 @@
 import './App.css';
-import FilmDetail from './components/films/pages/filmDetail';
-import Films from './components/films/pages/films';
 import NavigationBar from './components/navbar/navigationbar';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GamesPage from './pages/GamesPage.jsx';

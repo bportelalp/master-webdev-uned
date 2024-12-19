@@ -1,5 +1,3 @@
-# Films app con React
+# Tabletop WebApp
 
-Aplicación correspondiente a la práctica 1 de react.
-
-Consiste en un visor de catálogo de películas, con detalle a cada una de ellas
+Aplicación web para visualización de catálogo de juegos de mesa

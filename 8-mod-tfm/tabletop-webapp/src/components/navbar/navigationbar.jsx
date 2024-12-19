@@ -21,9 +21,6 @@ const NavigationBar = () => {
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} onClick={gotoHome}>
                             Catálogo juegos de mesa
                         </Typography>
-                        <Link to="/films">
-                            <Button variant="contained">Todas las películas</Button>
-                        </Link>
                     </Toolbar>
                 </AppBar>
             </Box>
