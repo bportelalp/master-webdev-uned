@@ -1,11 +1,13 @@
 import express from 'express'
-import repo from '../services/tabletop-repo.js'
+import repo from '../services/games-repo.js'
 import debugLib from 'debug';
 import upload from '../middlewares/file-upload.js';
 import { ApiError } from '../helpers/ApiError.js';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
+import validator from '../middlewares/body-validator.js';
+import { validationResult } from 'express-validator';
 
 const debug = debugLib("api:games")
 
@@ -35,8 +37,12 @@ router.get('/:id', async function (req, res, next) {
   }
 });
 
-router.put('/:id', async (req, res, next) => {
+router.put('/:id', validator.validateGame(), async (req, res, next) => {
   try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty())
+      throw new ApiError(400, "Hay errores de validación en los datos", { errors: errors.array() });
+
     const { id } = req.params;
     const game = req.body;
 
@@ -85,8 +91,12 @@ router.put('/:id/image', upload.single('image'), async (req, res, next) => {
 })
 
 /* Post games */
-router.post('', async (req, res, next) => {
+router.post('', validator.validateGame(), async (req, res, next) => {
   try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty())
+      throw new ApiError(400, "Hay errores de validación en los datos", { errors: errors.array() });
+
     const game = req.body;
     const skipEquality = false;
     if (skipEquality) {

@@ -13,8 +13,8 @@ import dotenv from "dotenv"
 dotenv.config();
 
 import indexRouter from './routes/index.js';
-import usersRouter from './routes/users.js';
 import gamesRouter from './routes/games.js';
+import gameResultsRouter from './routes/game-results.js';
 import errorHandler from './middlewares/error-handler.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -33,8 +33,8 @@ app.use(cookieParser());
 app.use('/public', express.static(publicDir));
 
 app.use('/api', indexRouter);
-app.use('/api/users', usersRouter);
 app.use('/api/games', gamesRouter);
+app.use('/api/game-results', gameResultsRouter);
 debug("Rutas configuradas");
 
 app.use(errorHandler)

@@ -4,8 +4,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Movie from '@mui/icons-material/Movie';
-import { Button } from "@mui/material";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const NavigationBar = () => {
     const navigate = useNavigate();
@@ -21,9 +20,6 @@ const NavigationBar = () => {
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} onClick={gotoHome}>
                             Catálogo juegos de mesa
                         </Typography>
-                        <Link to="/films">
-                            <Button variant="contained">Todas las películas</Button>
-                        </Link>
                     </Toolbar>
                 </AppBar>
             </Box>
