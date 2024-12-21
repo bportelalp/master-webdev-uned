@@ -32,6 +32,10 @@ app.use(cookieParser());
 
 app.use('/public', express.static(publicDir));
 
+// Hostear una app de react
+if(process.env.FOLDER_HOSTED_WEBAPP)
+  app.use('/', express.static(process.env.FOLDER_HOSTED_WEBAPP))
+
 app.use('/api', indexRouter);
 app.use('/api/games', gamesRouter);
 app.use('/api/game-results', gameResultsRouter);

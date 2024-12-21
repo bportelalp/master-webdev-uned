@@ -29,7 +29,7 @@ El backend está formado por los siguientes componentes:
 4. Middleware de validación de datos: comprueba que los datos recibidos de cliente están con el esquema adecuado.
 5. Rutas: las propias rutas donde definir la API.
 
-Para más información, véase [TODO].
+Para más información, véase [Backend - Tabletop API](category/backend---tabletop-api).
 
 ## Frontend con React
 
@@ -39,7 +39,7 @@ El frontend está elaborado con `react`, teniendo las siguientes funcionalidades
 2. Detalles de juego y partidas.
 3. Formulario registro/edición de juego.
 
-Para más información, véase [TODO].
+Para más información, véase [Frontend - Tabletop WebApp](category/frontend---tabletop-webapp).
 
 
 ![Página principal de tabletop-webapp](../static/img/frontend/main-page.png)

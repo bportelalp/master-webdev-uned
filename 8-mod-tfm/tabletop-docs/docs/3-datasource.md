@@ -24,7 +24,7 @@ Para la base de datos, se crea un clúster, que en este caso fue compartido con 
 Únicamente se necesitan dos colecciones para esta aplicación
 
 * `games`: almacena los juegos, cada uno en un documento separado.
-* `game_results`: almacena los resultados de las partidas de los juegos, donde cada documento es una partida, que tiene el campo `gameId` que lo relaciona con el juego.
+* `game_results`: almacena los resultados de las partidas de los juegos, donde cada documento es una partida con `gameId` que lo relaciona con el juego.
 
 ## Permisos
 

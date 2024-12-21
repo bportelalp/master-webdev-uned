@@ -14,7 +14,7 @@ Esta es la documentación del Trabajo Fin de Máster realizado por **Bruno Porte
 
 El trabajo pretende poner en práctica lo aprendido de node.js empleando principalmente `express` para construir una REST API, acompañada de un front-end con `react`.
 
-Lo que se pretende construir en este Trabajo Fin de Máster es un prototipo de una aplicación web que sirva de catálogo personal, así como registro de las rondas aplicadas en cada partida. 
+Lo que se pretende construir en este Trabajo Fin de Máster es un prototipo de una aplicación web que sirva de catálogo personal de juegos de mesa, así como registro de las rondas aplicadas en cada partida. 
 
 El alcance de este trabajo es un *prototipo* para explorar las posibilidades, a la vez que demostrar los conocimientos adquiridos a lo largo del Máster, así como la capacidad de integrarlos para elaborar una sencilla aplicación.
 
