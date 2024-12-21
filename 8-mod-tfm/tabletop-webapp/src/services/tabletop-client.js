@@ -8,14 +8,14 @@ const URI = process.env.REACT_APP_TABLETOP_API;
  * @returns Array con juegos
  */
 const getGames = async () => {
-    const uri = `${URI}/api/games`;
-    try {
-        const resp = await axios.get(uri);
-        return resp.data;
-    } catch (error) {
-        console.log('Error on', uri, error);
-        throw new Error(error.message);
-    }
+  const uri = `${URI}/api/games`;
+  try {
+    const resp = await axios.get(uri);
+    return resp.data;
+  } catch (error) {
+    console.log('Error on', uri, error);
+    throw new Error(error.message);
+  }
 }
 
 /**
@@ -24,20 +24,20 @@ const getGames = async () => {
  * @returns Juego encontrado o null si no existe
  */
 const getGame = async (gameId) => {
-    const uri = `${URI}/api/games/${gameId}`;
+  const uri = `${URI}/api/games/${gameId}`;
 
-    try {
-        const resp = await axios.get(uri);
-        return resp.data;
-    } catch (error) {
-        // Si el error es un 404, devolver null, porque el juego no existe
-        if (error.response && error.response.status === 404) {
-            return null;
-        }
-
-        console.log('Error on', uri, error);
-        throw new Error(error.message);
+  try {
+    const resp = await axios.get(uri);
+    return resp.data;
+  } catch (error) {
+    // Si el error es un 404, devolver null, porque el juego no existe
+    if (error.response && error.response.status === 404) {
+      return null;
     }
+
+    console.log('Error on', uri, error);
+    throw new Error(error.message);
+  }
 }
 
 
@@ -47,16 +47,16 @@ const getGame = async (gameId) => {
  * @returns El objeto creado, con el nuevo id generado.
  */
 const createGame = async (game) => {
-    const uri = `${URI}/api/games`;
-    if (game._id) delete game._id;
-    
-    try {
-        const resp = await axios.post(uri, game);
-        return resp.data;
-    } catch (error) {
-        console.log('Error on', uri, error);
-        throw new Error(error.message);
-    }
+  const uri = `${URI}/api/games`;
+  if (game._id) delete game._id;
+
+  try {
+    const resp = await axios.post(uri, game);
+    return resp.data;
+  } catch (error) {
+    console.log('Error on', uri, error);
+    throw new Error(error.message);
+  }
 }
 
 
@@ -67,16 +67,16 @@ const createGame = async (game) => {
  * @returns El objeto actualizado por completo.
  */
 const updateGame = async (gameId, game) => {
-    const uri = `${URI}/api/games/${gameId}`;
-    if (game._id) delete game._id;
+  const uri = `${URI}/api/games/${gameId}`;
+  if (game._id) delete game._id;
 
-    try {
-        const resp = await axios.put(uri, game);
-        return resp.data;
-    } catch (error) {
-        console.log('Error on', uri, error);
-        throw new Error(error.message);
-    }
+  try {
+    const resp = await axios.put(uri, game);
+    return resp.data;
+  } catch (error) {
+    console.log('Error on', uri, error);
+    throw new Error(error.message);
+  }
 }
 
 /**
@@ -86,23 +86,44 @@ const updateGame = async (gameId, game) => {
  * @returns El juego entero, con la imagen actualizada.
  */
 const updateGameImage = async (gameId, fileImage) => {
-    const uri = `${URI}/api/games/${gameId}/image`;
-    const formData = new FormData();
-    formData.append('image', fileImage);
+  const uri = `${URI}/api/games/${gameId}/image`;
+  const formData = new FormData();
+  formData.append('image', fileImage);
 
-    try {
-        const resp = await axios.put(uri, formData, {
-            headers: {
-                'Content-Type': 'multipart/form-data',
-            },
-        });
-        return resp.data;
-    } catch (error) {
-        console.log('Error on', uri, error);
-        throw error;
-    }
+  try {
+    const resp = await axios.put(uri, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    return resp.data;
+  } catch (error) {
+    console.log('Error on', uri, error);
+    throw error;
+  }
 }
 
+const getGameResults = async (gameId, from, to) => {
+  const uri = `${URI}/api/game-results/${gameId}`;
+  const opt = {
+    params: {
+      fromDate: from.toISOString(),
+      toDate: to.toISOString()
+    }
+  }
+  try {
+    const resp = await axios.get(uri, opt);
+    return resp.data;
+  } catch (error) {
+    // Si el error es un 404, devolver null, porque el juego no existe
+    if (error.response && error.response.status === 404) {
+      return null;
+    }
+
+    console.log('Error on', uri, error);
+    throw new Error(error.message);
+  }
+}
 
 /**
  * Función ayuda para obtener la ruta absoluta de una imagen de un juego, puesto
@@ -112,13 +133,17 @@ const updateGameImage = async (gameId, fileImage) => {
  */
 const getImgUri = (relativePath = "") => `${URI}${relativePath}`;
 
+
+
+
 const instance = {
-    getGames,
-    getImgUri,
-    getGame,
-    createGame,
-    updateGame,
-    updateGameImage
+  getGames,
+  getImgUri,
+  getGame,
+  createGame,
+  updateGame,
+  updateGameImage,
+  getGameResults
 }
 
 export default instance
