@@ -1,0 +1,8 @@
+{
+  "label": "Despliegue - AWS",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "En esta sección se aborda como desplegar la aplicación en una instancia EC2 de AWS."
+  }
+}
