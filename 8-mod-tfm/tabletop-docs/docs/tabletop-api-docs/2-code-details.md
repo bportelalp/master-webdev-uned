@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Estructura y programación del backend
 
-En esta sección describiremos la organización del proyecto `tabletop-api`
+En esta sección describiremos la organización del proyecto `tabletop-api`.
 
 La siguiente imagen recoge el directorio del proyecto
 

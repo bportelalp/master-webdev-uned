@@ -25,3 +25,14 @@ Para la base de datos, se crea un clúster, que en este caso fue compartido con 
 
 * `games`: almacena los juegos, cada uno en un documento separado.
 * `game_results`: almacena los resultados de las partidas de los juegos, donde cada documento es una partida, que tiene el campo `gameId` que lo relaciona con el juego.
+
+## Permisos
+
+Se usa un usuario genérico con acceso a lectura escritura a la colección
+
+## Seguridad de acceso
+
+El clúster tiene protección de acceso por IP, de manera que las únicas IPs permitidas son:
+
+* IP de desarrollo: la dirección IP desde donde se ejecuta la aplicación de desarrollo.
+* IP de la máquina EC2: IP de la máquina alojada en AWS donde se encuentra la aplicación de producción.
