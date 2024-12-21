@@ -14,7 +14,7 @@ function App() {
           <NavigationBar />
           <Routes>
             <Route path='/' element={<GamesPage/>} />
-            <Route index path='/home' element={<GamesPage/>} />
+            <Route index path='/games' element={<GamesPage/>} />
             <Route index path='/game/:gameId' element={<GameDetailPage />} />
             <Route index path='/game/edit' element={<GameEditPage />} />
             <Route index path='/game/edit/:gameId' element={<GameEditPage />} />

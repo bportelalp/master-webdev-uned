@@ -1,0 +1,8 @@
+{
+  "label": "Frontend - Tabletop WebApp",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "En esta sección se aborda la implementación del frontend para el aplicativo."
+  }
+}
