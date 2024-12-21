@@ -27,16 +27,16 @@ Se trabaja con React, React Native e Ionic
 
 ### Fundamentos de Programación en Node.js
 
-Introducción a la programación con Node.js
+Introducción a la programación con Node.js. Conocer los fundamentos del sistema de node.js, promesas, fs, path y otros módulos base.
 
 ### Arquitecturas de desarrollo web con Node.js
 
-Web con Node.js con Express y MongoDB.
+Conocer los fundamentos de Express, usando MongoDb como persistencia de datos.
 
 ### Despliegue de aplicaciones Node.js
 
-Despliegue de aplicaciones node.js en AWS.
+Desplegar aplicaciones de node.js en AWS. Arquitecturas serverless con Lambda, DynamoDB y API 
 
 ### Trabajo Fin de Máster
 
-TODO.
+Desarrollo de una aplicación libre con los conocimientos y tecnologías aprendidas en el curso.
